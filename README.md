@@ -6,10 +6,10 @@ This is a modern Fortran implementation of the Carlson symmetric forms of ellipt
    elliptic integrals](http://dl.acm.org/citation.cfm?id=355970),
    ACM Transactions on Mathematical
    Software 7, 3 (September 1981), pp. 398-403.
-2. B. C. Carlson, Computing elliptic integrals by
-   duplication, Numerische Mathematik 33, (1979),
+2. B. C. Carlson, [Computing elliptic integrals by
+   duplication](http://link.springer.com/article/10.1007%2FBF01396491), Numerische Mathematik 33, (1979),
    pp. 1-16.
-3. B. C. Carlson, Elliptic integrals of the first kind,
+3. B. C. Carlson, [Elliptic integrals of the first kind](http://epubs.siam.org/doi/abs/10.1137/0508016),
    SIAM Journal of Mathematical Analysis 8, (1977),
    pp. 231-242.
 
