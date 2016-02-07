@@ -1,0 +1,41 @@
+project: carlson-elliptic-integrals
+project_dir: ./src
+output_dir: ./doc
+project_github: https://github.com/jacobwilliams/carlson_elliptic_integrals
+summary: Carlson symmetric forms of elliptic integrals
+author: Jacob Williams
+github: https://github.com/jacobwilliams
+predocmark_alt: >
+predocmark: <
+docmark_alt:
+docmark: !
+display: public
+         private
+         protected
+source: true
+graph: true
+exclude: pyplot_module.f90
+extra_mods: pyplot_module:https://github.com/jacobwilliams/pyplot-fortran
+            iso_fortran_env:https://gcc.gnu.org/onlinedocs/gfortran/ISO_005fFORTRAN_005fENV.html
+
+Brief description
+---------------
+
+This is a modern Fortran implementation of the Carlson symmetric forms of elliptic integrals code from the [SLATEC library](http://www.netlib.org/slatec/src/). It has been extensively refactored.
+
+## References
+
+1. B. C. Carlson and E. M. Notis, [Algorithms for incomplete
+   elliptic integrals](http://dl.acm.org/citation.cfm?id=355970),
+   ACM Transactions on Mathematical
+   Software 7, 3 (September 1981), pp. 398-403.
+2. B. C. Carlson, Computing elliptic integrals by
+   duplication, Numerische Mathematik 33, (1979),
+   pp. 1-16.
+3. B. C. Carlson, Elliptic integrals of the first kind,
+   SIAM Journal of Mathematical Analysis 8, (1977),
+   pp. 231-242.
+
+# License
+
+The carlson-elliptic-integrals source code and related files and documentation are distributed under a permissive free software [license](https://github.com/jacobwilliams/carlson_elliptic_integrals/blob/master/LICENSE) (BSD-style).  The original Fortran 77 code is [public domain](http://www.netlib.org/slatec/guide).
