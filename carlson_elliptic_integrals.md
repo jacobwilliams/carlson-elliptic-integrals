@@ -38,4 +38,4 @@ This is a modern Fortran implementation of the Carlson symmetric forms of ellipt
 
 # License
 
-The carlson-elliptic-integrals source code and related files and documentation are distributed under a permissive free software [license](https://github.com/jacobwilliams/carlson_elliptic_integrals/blob/master/LICENSE) (BSD-style).  The original Fortran 77 code is [public domain](http://www.netlib.org/slatec/guide).
+The carlson-elliptic-integrals source code and related files and documentation are distributed under a permissive free software [license](https://github.com/jacobwilliams/carlson-elliptic-integrals/blob/master/LICENSE) (BSD-style).  The original Fortran 77 code is [public domain](http://www.netlib.org/slatec/guide).
