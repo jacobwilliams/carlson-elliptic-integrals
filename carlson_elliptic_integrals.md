@@ -1,7 +1,7 @@
 project: carlson-elliptic-integrals
 project_dir: ./src
 output_dir: ./doc
-project_github: https://github.com/jacobwilliams/carlson_elliptic_integrals
+project_github: https://github.com/jacobwilliams/carlson-elliptic-integrals
 summary: Carlson symmetric forms of elliptic integrals
 author: Jacob Williams
 github: https://github.com/jacobwilliams
