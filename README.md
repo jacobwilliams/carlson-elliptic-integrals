@@ -1,3 +1,9 @@
+## Status
+
+[![Build Status](https://img.shields.io/travis/jacobwilliams/carlson-elliptic-integrals/master.svg?style=plastic)](https://travis-ci.org/jacobwilliams/carlson-elliptic-integrals)
+
+## Description
+
 This is a modern Fortran implementation of the Carlson symmetric forms of elliptic integrals code from the [SLATEC library](http://www.netlib.org/slatec/src/). It has been extensively refactored.
 
 ## References
@@ -12,6 +18,10 @@ This is a modern Fortran implementation of the Carlson symmetric forms of ellipt
 3. B. C. Carlson, [Elliptic integrals of the first kind](http://epubs.siam.org/doi/abs/10.1137/0508016),
    SIAM Journal of Mathematical Analysis 8, (1977),
    pp. 231-242.
+
+# Documentation
+
+The latest API documentation for the `master` branch can be found [here](http://jacobwilliams.github.io/carlson-elliptic-integrals/). This was generated from the source code using [FORD](https://github.com/cmacmackin/ford) (note that the included `build.sh` script will also generate these files).
 
 # License
 
