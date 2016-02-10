@@ -851,7 +851,7 @@
         !! of LOLIM used in the routine for [[DRC]].
     real(wp),parameter :: uplim  = 0.30_wp*(d1mach(2)/5.0_wp)**(1.0_wp/3.0_wp)
         !! not greater than 0.3 times the cube root of
-        !! the value of UPLIM used in the routine for DRC.
+        !! the value of UPLIM used in the routine for [[DRC]].
 
     real(wp),parameter :: c1     = 3.0_wp/14.0_wp
     real(wp),parameter :: c2     = 1.0_wp/3.0_wp
