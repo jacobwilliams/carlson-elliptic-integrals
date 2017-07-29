@@ -126,7 +126,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
 	  data-placement="bottom" data-html="true"
-	  title=" 1.4% of total for source files.">5 statements</a>
+	  title="14.5% of total for source files.">49 statements</a>
      </li> 
      
      
@@ -343,15 +343,87 @@
 
     <section>
       <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="k">program </span><span class="n">carlson_elliptic_test</span>
-<a name="ln-2"></a>
-<a name="ln-3"></a><span class="k">use </span><span class="n">carlson_elliptic_module</span>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">!*******************************************************************************</span>
+<a name="ln-2"></a><span class="c">!&gt;</span>
+<a name="ln-3"></a><span class="c">!  Unit tests for the [[carlson_elliptic_module]] module.</span>
 <a name="ln-4"></a>
-<a name="ln-5"></a><span class="k">implicit none</span>
+<a name="ln-5"></a><span class="k">program </span><span class="n">carlson_elliptic_test</span>
 <a name="ln-6"></a>
-<a name="ln-7"></a><span class="k">call </span><span class="n">elliptic_functions_test</span><span class="p">()</span>
-<a name="ln-8"></a>
-<a name="ln-9"></a><span class="k">end program </span><span class="n">carlson_elliptic_test</span>
+<a name="ln-7"></a>    <span class="k">use </span><span class="n">carlson_elliptic_module</span>
+<a name="ln-8"></a>    <span class="k">use </span><span class="n">iso_fortran_env</span><span class="p">,</span> <span class="n">only</span><span class="p">:</span> <span class="n">error_unit</span><span class="p">,</span> <span class="n">wp</span> <span class="o">=&gt;</span> <span class="n">real64</span>
+<a name="ln-9"></a>
+<a name="ln-10"></a>    <span class="k">implicit none</span>
+<a name="ln-11"></a>
+<a name="ln-12"></a><span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">w</span>
+<a name="ln-13"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">d</span><span class="p">,</span><span class="n">truth</span>
+<a name="ln-14"></a>    <span class="kt">integer</span> <span class="kd">::</span> <span class="n">ier</span>
+<a name="ln-15"></a>    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">pi</span> <span class="o">=</span> <span class="nb">acos</span><span class="p">(</span><span class="o">-</span><span class="mf">1.0_wp</span><span class="p">)</span>
+<a name="ln-16"></a>
+<a name="ln-17"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;&#39;</span>
+<a name="ln-18"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;---------------&#39;</span>
+<a name="ln-19"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39; elliptic_functions_test&#39;</span>
+<a name="ln-20"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;---------------&#39;</span>
+<a name="ln-21"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;&#39;</span>
+<a name="ln-22"></a>
+<a name="ln-23"></a>    <span class="c">! write(*,*) &#39;DRC ERRTOL=&#39;,(d1mach(3)/16.0_wp)**(1.0_wp/6.0_wp)</span>
+<a name="ln-24"></a>    <span class="c">! write(*,*) &#39;DRD ERRTOL=&#39;,(d1mach(3)/3.0_wp)**(1.0_wp/6.0_wp)</span>
+<a name="ln-25"></a>    <span class="c">! write(*,*) &#39;DRF ERRTOL=&#39;,(4.0_wp*d1mach(3))**(1.0_wp/6.0_wp)</span>
+<a name="ln-26"></a>    <span class="c">! write(*,*) &#39;DRJ ERRTOL=&#39;,(d1mach(3)/3.0_wp)**(1.0_wp/6.0_wp)</span>
+<a name="ln-27"></a>    <span class="c">! write(*,*) &#39;&#39;</span>
+<a name="ln-28"></a>
+<a name="ln-29"></a>    <span class="c">!DRC:</span>
+<a name="ln-30"></a>
+<a name="ln-31"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mf">8.0_wp</span>
+<a name="ln-32"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mf">2.0_wp</span>
+<a name="ln-33"></a>    <span class="n">z</span> <span class="o">=</span> <span class="mf">4.0_wp</span>
+<a name="ln-34"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">z</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span> <span class="o">+</span> <span class="n">drc</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-35"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="n">drc</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-36"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRC(X,X+Z) + DRC(Y,Y+Z) = DRC(0,Z) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-37"></a>
+<a name="ln-38"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mf">0.0_wp</span>
+<a name="ln-39"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0_wp</span> <span class="o">/</span> <span class="mf">4.0_wp</span>
+<a name="ln-40"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-41"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="n">pi</span>
+<a name="ln-42"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRC(0,1/4) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-43"></a>
+<a name="ln-44"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mf">1.0_wp</span> <span class="o">/</span> <span class="mi">1</span><span class="mf">6.0_wp</span>
+<a name="ln-45"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mf">1.0_wp</span> <span class="o">/</span> <span class="mf">8.0_wp</span>
+<a name="ln-46"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-47"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="n">pi</span>
+<a name="ln-48"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRC(1/16,1/8) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-49"></a>
+<a name="ln-50"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mf">9.0_wp</span> <span class="o">/</span> <span class="mf">4.0_wp</span>
+<a name="ln-51"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mf">2.0_wp</span>
+<a name="ln-52"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-53"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="nb">log</span><span class="p">(</span><span class="mf">2.0_wp</span><span class="p">)</span>
+<a name="ln-54"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRC(9/4,2) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-55"></a>
+<a name="ln-56"></a>    <span class="c">!DRD:</span>
+<a name="ln-57"></a>
+<a name="ln-58"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="mf">0.0_wp</span>
+<a name="ln-59"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="mf">0.0_wp</span>
+<a name="ln-60"></a>    <span class="n">z</span> <span class="o">=</span> <span class="mi">3</span><span class="mf">0.0_wp</span>
+<a name="ln-61"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">drd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span> <span class="o">+</span> <span class="n">drd</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span> <span class="o">+</span> <span class="n">drd</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-62"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="mf">3.0_wp</span> <span class="o">/</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">z</span><span class="p">)</span>
+<a name="ln-63"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRD(X,Y,Z) + DRD(Y,Z,X) + DRD(Z,X,Y) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-64"></a>
+<a name="ln-65"></a>    <span class="c">!DRF:</span>
+<a name="ln-66"></a>
+<a name="ln-67"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="mf">0.0_wp</span>
+<a name="ln-68"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="mf">0.0_wp</span>
+<a name="ln-69"></a>    <span class="n">z</span> <span class="o">=</span> <span class="mi">10</span><span class="mf">0.0_wp</span>
+<a name="ln-70"></a>    <span class="n">w</span> <span class="o">=</span> <span class="mf">2.0_wp</span>
+<a name="ln-71"></a>    <span class="n">d</span> <span class="o">=</span> <span class="n">DRF</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">X</span><span class="o">+</span><span class="n">Z</span><span class="p">,</span><span class="n">X</span><span class="o">+</span><span class="n">W</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span> <span class="o">+</span> <span class="n">DRF</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span><span class="n">Y</span><span class="o">+</span><span class="n">Z</span><span class="p">,</span><span class="n">Y</span><span class="o">+</span><span class="n">W</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-72"></a>    <span class="n">truth</span> <span class="o">=</span> <span class="n">DRF</span><span class="p">(</span><span class="mf">0.0_wp</span><span class="p">,</span><span class="n">Z</span><span class="p">,</span><span class="n">W</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+<a name="ln-73"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="s1">&#39;(A60,E20.9)&#39;</span><span class="p">)</span> <span class="s1">&#39;DRF(X,X+Z,X+W) + DRF(Y,Y+Z,Y+W) error = &#39;</span><span class="p">,</span> <span class="n">d</span><span class="o">-</span><span class="n">truth</span>
+<a name="ln-74"></a>
+<a name="ln-75"></a>    <span class="c">!DRJ:</span>
+<a name="ln-76"></a>
+<a name="ln-77"></a>    <span class="c">!...</span>
+<a name="ln-78"></a>
+<a name="ln-79"></a>    <span class="k">write</span><span class="p">(</span><span class="o">*</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="s1">&#39;&#39;</span>
+<a name="ln-80"></a>
+<a name="ln-81"></a><span class="k">end program </span><span class="n">carlson_elliptic_test</span>
 </pre></div>
 
     </section>
