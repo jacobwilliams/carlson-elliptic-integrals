@@ -1,6 +1,6 @@
-## Status
+# Status
 
-[![Build Status](https://img.shields.io/travis/jacobwilliams/carlson-elliptic-integrals/master.svg?style=plastic)](https://travis-ci.org/jacobwilliams/carlson-elliptic-integrals)
+![Build Status](https://github.com/jacobwilliams/carlson-elliptic-integrals/actions/workflows/CI.yml/badge.svg)
 
 ## Description
 
