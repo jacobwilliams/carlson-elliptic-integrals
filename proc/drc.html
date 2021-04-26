@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	 
-	 <meta name="description" content="Carlson symmetric forms of elliptic integrals">
+   
+   <meta name="description" content="Carlson symmetric forms of elliptic integrals">
     
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
@@ -17,6 +17,9 @@
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
     
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,13 +29,6 @@
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
-
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
 
   </head>
 
@@ -52,31 +48,33 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-				
+        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
-		 aria-expanded="false">Contents <span class="caret"></span></a>
-	      <ul class="dropdown-menu">
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
               
-            <li><a href="../lists/files.html">Source Files</a></li>
-				
-				
+            <li><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
+        
+        
+        
             <li><a href="../lists/modules.html">Modules</a></li>
-				
+        
             
                                 
             <li><a href="../lists/procedures.html">Procedures</a></li>
-				
-								
-				
-            <li><a href="../program/carlson_elliptic_test.html">Program</a></li>
-	    
+        
+               
+        
             </ul>
             </li>
 
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
+
 
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
@@ -86,8 +84,6 @@
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
-
-<li class="visible-xs hidden-sm visible-lg"><a href="../program/carlson_elliptic_test.html">Program</a></li>
 
           </ul>
         
@@ -125,19 +121,23 @@
     
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
-	  data-placement="bottom" data-html="true"
-	  title="17.9% of total for procedures.">50 statements</a>
+    data-placement="bottom" data-html="true"
+    title="17.9% of total for procedures.">50 statements</a>
      </li> 
+     
      
      
     <li><i class="fa fa-code"></i><a href="../src/carlson_elliptic_module.f90"> Source File</a></li>
      
+     
   </ul>
   <ol class="breadcrumb in-well text-right">
   
+    
      <li><a href='../sourcefile/carlson_elliptic_module.f90.html'>carlson_elliptic_module.f90</a></li>
-  
+    
      <li><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></li>
+    
   
      <li class="active">drc</li>
   </ol>
@@ -157,6 +157,9 @@
     
 <div id="sidebar">
   
+<h3>Contents</h3>
+ 
+
 
 
 
@@ -185,28 +188,8 @@
 </div>
 
 
-  <hr>
-  
 
-<div class="panel panel-default">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs-0">All Procedures</a></h3></div>
-  <div id="allprocs-0" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../proc/drc.html">drc</a>
-      
-      <a class="list-group-item" href="../proc/drd.html">drd</a>
-      
-      <a class="list-group-item" href="../proc/drf.html">drf</a>
-      
-      <a class="list-group-item" href="../proc/drj.html">drj</a>
-      
-    </div>
-  </div>
 </div>
-
-
-</div>  
 
     </div>
     
@@ -215,7 +198,7 @@
 public function drc(x, y, ier)
     
     
-	 
+   
 </h2>
     
   
@@ -223,8 +206,8 @@ public function drc(x, y, ier)
 
     
     <p>Compute an approximation of the Carlson elliptic integral:
-  $$ R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt $$
-  where \(x\ge0\) and \(y&gt;0\).</p>
+  <script type="math/tex; mode=display"> R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt </script>
+  where <script type="math/tex">x\ge0</script> and <script type="math/tex">y>0</script>.</p>
 <p>The duplication theorem is iterated until the variables are nearly equal,
   and the function is then expanded in Taylor series to fifth order.
   Logarithmic, inverse circular, and inverse hyperbolic functions can be
@@ -236,27 +219,31 @@ public function drc(x, y, ier)
 <li>Pexton, R. L., Lawrence Livermore National Laboratory, Livermore, CA  94550</li>
 </ul>
 <h3>DRC special cases</h3>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
     \begin{array}{rcll}
-     R_C(x,x+z) + R_C(y,y+z) &amp;=&amp; R_C(0,z)             &amp; x&gt;0, y&gt;0, ~\mathrm{and}~ z&gt;0 ~\mathrm{and}~ x y = z^2 \\
-     R_C(0,1/4)              &amp;=&amp; R_C(1/16,1/8) = \pi  &amp; \\
-     R_C(9/4,2)              &amp;=&amp; \ln(2)               &amp;
+     R_C(x,x+z) + R_C(y,y+z) &=& R_C(0,z)             & x>0, y>0, ~\mathrm{and}~ z>0 ~\mathrm{and}~ x y = z^2 \\
+     R_C(0,1/4)              &=& R_C(1/16,1/8) = \pi  & \\
+     R_C(9/4,2)              &=& \ln(2)               &
     \end{array}
-  $$</p>
+  </script>
+</p>
 <h3>Special functions via DRC</h3>
-<p>$$
+<p>
+<script type="math/tex; mode=display">
   \begin{array}{rll}
-     \ln(x)        &amp;= (x-1) R_C \left( \left( \frac{1+x}{2} \right)^2, x \right) &amp; x&gt;0 \\
-     \sin^{-1}(x)  &amp;=  x R_C ( (1-x)^2 ,1 ) &amp; -1 \le x \le 1 \\
-     \cos^{-1}(x)  &amp;= \sqrt{1-x^2} R_C(x^2,1)  &amp; 0 \le x \le 1 \\
-     \tan^{-1}(x)  &amp;= x R_C(1,1+x^2) &amp; -\infty \lt x \lt \infty \\
-     \cot^{-1}(x)  &amp;= R_C(x^2, x^2+1) &amp; 0 \le x \lt \infty \\
-     \sinh^{-1}(x) &amp;= x R_C(1+x^2, 1) &amp; -\infty \lt x \lt \infty \\
-     \cosh^{-1}(x) &amp;= \sqrt{x^2-1} R_C(x^2,1)  &amp; x \ge 1 \\
-     \tanh^{-1}(x) &amp;= x R_C(1,1-x^2) &amp; -1 &lt; x &lt; 1 \\
-     \coth^{-1}(x) &amp;= R_C(x^2,x^2-1) &amp; x &gt; 1 \\
+     \ln(x)        &= (x-1) R_C \left( \left( \frac{1+x}{2} \right)^2, x \right) & x>0 \\
+     \sin^{-1}(x)  &=  x R_C ( (1-x)^2 ,1 ) & -1 \le x \le 1 \\
+     \cos^{-1}(x)  &= \sqrt{1-x^2} R_C(x^2,1)  & 0 \le x \le 1 \\
+     \tan^{-1}(x)  &= x R_C(1,1+x^2) & -\infty \lt x \lt \infty \\
+     \cot^{-1}(x)  &= R_C(x^2, x^2+1) & 0 \le x \lt \infty \\
+     \sinh^{-1}(x) &= x R_C(1+x^2, 1) & -\infty \lt x \lt \infty \\
+     \cosh^{-1}(x) &= \sqrt{x^2-1} R_C(x^2,1)  & x \ge 1 \\
+     \tanh^{-1}(x) &= x R_C(1,1-x^2) & -1 < x < 1 \\
+     \coth^{-1}(x) &= R_C(x^2,x^2-1) & x > 1 \\
   \end{array}
-  $$</p>
+  </script>
+</p>
 <h3>References</h3>
 <ul>
 <li>B. C. Carlson and E. M. Notis, <a href="http://dl.acm.org/citation.cfm?id=355970">Algorithms for incomplete
@@ -360,108 +347,102 @@ public function drc(x, y, ier)
     
     
     
-	 <h3>Return Value <small><span class="anchor" id="variable-drc"></span>real(kind=wp)
+   <h3>Return Value <small><span class="anchor" id="variable-drc"></span>real(kind=wp)
   </small></h3>
     
     
     
+    <br>
+    
+    
      
-     <h3>Called By</h3>
-     
-                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Called by</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: proc~~drc~~CalledByGraph Pages: 1 -->
-<svg id="procdrcCalledByGraph" width="204pt" height="78pt"
- viewBox="0.00 0.00 204.00 78.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="proc~~drc~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 74)">
+<svg id="procdrcCalledByGraph" width="152pt" height="32pt"
+ viewBox="0.00 0.00 152.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~drc~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>proc~~drc~~CalledByGraph</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-74 201,-74 201,5 -4,5"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 148,-28 148,4 -4,4"/>
 <!-- proc~drc -->
-<g id="node1" class="node"><title>proc~drc</title>
-<polygon fill="none" stroke="black" points="196,-48 142,-48 142,-22 196,-22 196,-48"/>
-<text text-anchor="middle" x="169" y="-32.55" font-family="Helvetica,sans-Serif" font-size="10.50">drc</text>
+<g id="proc~~drc~~CalledByGraph_node1" class="node">
+<title>proc~drc</title>
+<polygon fill="none" stroke="black" points="144,-24 90,-24 90,0 144,0 144,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">drc</text>
 </g>
 <!-- proc~drj -->
-<g id="node2" class="node"><title>proc~drj</title>
-<a xlink:href="../proc/drj.html" xlink:title="drj">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="80,-70 26,-70 26,-44 80,-44 80,-70"/>
-<text text-anchor="middle" x="53" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drj</text>
+<g id="proc~~drc~~CalledByGraph_node2" class="node">
+<title>proc~drj</title>
+<g id="a_proc~~drc~~CalledByGraph_node2"><a xlink:href=".././proc/drj.html" xlink:title="drj">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drj</text>
 </a>
+</g>
 </g>
 <!-- proc~drj&#45;&gt;proc~drc -->
-<g id="edge2" class="edge"><title>proc~drj&#45;&gt;proc~drc</title>
-<path fill="none" stroke="#000000" d="M80.1968,-51.842C95.6135,-48.9181 115.12,-45.2185 131.922,-42.032"/>
-<polygon fill="#000000" stroke="#000000" points="132.801,-45.4278 141.974,-40.1257 131.496,-38.5504 132.801,-45.4278"/>
-</g>
-<!-- program~carlson_elliptic_test -->
-<g id="node3" class="node"><title>program~carlson_elliptic_test</title>
-<a xlink:href="../program/carlson_elliptic_test.html" xlink:title="carlson_elliptic_test">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="106,-26 3.55271e-14,-26 0,-1.24345e-14 106,-3.55271e-15 106,-26"/>
-<text text-anchor="middle" x="53" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">carlson_elliptic_test</text>
-</a>
-</g>
-<!-- program~carlson_elliptic_test&#45;&gt;proc~drc -->
-<g id="edge4" class="edge"><title>program~carlson_elliptic_test&#45;&gt;proc~drc</title>
-<path fill="none" stroke="#000000" d="M106.247,-23.0986C114.874,-24.7347 123.642,-26.3976 131.781,-27.9412"/>
-<polygon fill="#000000" stroke="#000000" points="131.218,-31.3968 141.695,-29.8216 132.523,-24.5194 131.218,-31.3968"/>
+<g id="proc~~drc~~CalledByGraph_edge1" class="edge">
+<title>proc~drj&#45;&gt;proc~drc</title>
+<path fill="none" stroke="#000000" d="M54.4,-12C62.39,-12 71.31,-12 79.82,-12"/>
+<polygon fill="#000000" stroke="#000000" points="79.92,-15.5 89.92,-12 79.92,-8.5 79.92,-15.5"/>
 </g>
 </g>
 </svg>
-</div>
-                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                      </div>
-                      <div class="modal-body">
-                        
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
     <p>Nodes of different colours represent the following: </p>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="556pt" height="34pt"
- viewBox="0.00 0.00 556.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<svg width="597pt" height="32pt"
+ viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-30 553,-30 553,5 -4,5"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
 <!-- Subroutine -->
-<g id="node1" class="node"><title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="64,-26 3.19744e-14,-26 0,-1.24345e-14 64,-3.55271e-15 64,-26"/>
-<text text-anchor="middle" x="32" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
 </g>
 <!-- Function -->
-<g id="node2" class="node"><title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-26 82,-26 82,-1.24345e-14 136,-3.55271e-15 136,-26"/>
-<text text-anchor="middle" x="109" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
 </g>
 <!-- Interface -->
-<g id="node3" class="node"><title>Interface</title>
-<polygon fill="#a7506f" stroke="#a7506f" points="208,-26 154,-26 154,-1.24345e-14 208,-3.55271e-15 208,-26"/>
-<text text-anchor="middle" x="181" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
 <!-- Unknown Procedure Type -->
-<g id="node4" class="node"><title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="362,-26 226,-26 226,-1.24345e-14 362,-3.55271e-15 362,-26"/>
-<text text-anchor="middle" x="294" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node"><title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="434,-26 380,-26 380,-1.24345e-14 434,-3.55271e-15 434,-26"/>
-<text text-anchor="middle" x="407" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node"><title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="548,-26 452,-26 452,-1.24345e-14 548,-3.55271e-15 548,-26"/>
-<text text-anchor="middle" x="500" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
+<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -472,17 +453,17 @@ public function drc(x, y, ier)
     This could include the module procedures in a generic interface or the
     implementation in a submodule of an interface in a parent module.
     </p>
-    
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
+    </div></div></div></div>
+      </div>
+    </div>
      
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
       
+<h3>Contents</h3>
+ 
+
 
 
 
@@ -509,6 +490,7 @@ public function drc(x, y, ier)
     <a class="list-group-item" href="../proc/drc.html#src">drc</a>
   </div>
 </div>
+
 
 
     </section>
@@ -599,9 +581,9 @@ public function drc(x, y, ier)
         <span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
             <span class="s1">&#39;drc: x&lt;0 .or. y&lt;=0 where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; and y = &#39;</span><span class="o">//</span><span class="n">xern4</span>
         <span class="k">return</span>
-<span class="k">    </span><span class="n">endif</span>
+<span class="k">    endif</span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">&gt;</span><span class="n">uplim</span> <span class="p">)</span> <span class="k">then</span>
+<span class="k">    if</span> <span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">&gt;</span><span class="n">uplim</span> <span class="p">)</span> <span class="k">then</span>
 <span class="k">        </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">3</span>
         <span class="k">write</span> <span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">x</span>
         <span class="k">write</span> <span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">y</span>
@@ -610,9 +592,9 @@ public function drc(x, y, ier)
             <span class="s1">&#39;drc: max(x,y)&gt;uplim where x = &#39;</span><span class="o">//</span><span class="p">&amp;</span>
             <span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and uplim = &#39;</span><span class="o">//</span><span class="n">xern5</span>
         <span class="k">return</span>
-<span class="k">    </span><span class="n">endif</span>
+<span class="k">    endif</span>
 
-    <span class="k">if</span> <span class="p">(</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">&lt;</span><span class="n">lolim</span> <span class="p">)</span> <span class="k">then</span>
+<span class="k">    if</span> <span class="p">(</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">&lt;</span><span class="n">lolim</span> <span class="p">)</span> <span class="k">then</span>
 <span class="k">        </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">2</span>
         <span class="k">write</span> <span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">x</span>
         <span class="k">write</span> <span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">y</span>
@@ -621,9 +603,9 @@ public function drc(x, y, ier)
             <span class="s1">&#39;drc: x+y&lt;lolim where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="p">&amp;</span>
             <span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and lolim = &#39;</span><span class="o">//</span><span class="n">xern5</span>
         <span class="k">return</span>
-<span class="k">    </span><span class="n">endif</span>
+<span class="k">    endif</span>
 
-    <span class="n">ier</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">    </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">xn</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">yn</span> <span class="o">=</span> <span class="n">y</span>
 
@@ -649,36 +631,14 @@ public function drc(x, y, ier)
     </div>
   </div>
 
-  <section class="visible-xs visible-sm hidden-md">
-    <hr>
-    
-
-<div class="panel panel-default">
-  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#allprocs-1">All Procedures</a></h3></div>
-  <div id="allprocs-1" class="panel-collapse collapse">
-    <div class="list-group">
-      
-      <a class="list-group-item" href="../proc/drc.html">drc</a>
-      
-      <a class="list-group-item" href="../proc/drd.html">drd</a>
-      
-      <a class="list-group-item" href="../proc/drf.html">drf</a>
-      
-      <a class="list-group-item" href="../proc/drj.html">drj</a>
-      
-    </div>
-  </div>
-</div>
-
-
-  </section>
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
@@ -709,12 +669,17 @@ public function drc(x, y, ier)
       MathJax.Hub.Config({
         TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
         jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
-        'HTML-CSS': { 
-           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
-        }
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
   </body>
 </html>

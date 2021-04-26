@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	 
-	 <meta name="description" content="Carlson symmetric forms of elliptic integrals">
+   
+   <meta name="description" content="Carlson symmetric forms of elliptic integrals">
     
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
@@ -19,6 +19,9 @@ All Procedures &ndash; carlson-elliptic-integrals
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
     
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,13 +31,6 @@ All Procedures &ndash; carlson-elliptic-integrals
     
     <script src="../js/jquery-2.1.3.min.js"></script>
     <script src="../js/svg-pan-zoom.min.js"></script>
-
-    
-    <script src="../tipuesearch/tipuesearch_content.js"></script>
-    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    <script src="../tipuesearch/tipuesearch_set.js"></script>
-    <script src="../tipuesearch/tipuesearch.js"></script>
-    
 
   </head>
 
@@ -54,31 +50,33 @@ All Procedures &ndash; carlson-elliptic-integrals
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-				
+        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
-		 aria-expanded="false">Contents <span class="caret"></span></a>
-	      <ul class="dropdown-menu">
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
               
-            <li><a href="../lists/files.html">Source Files</a></li>
-				
-				
+            <li><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
+        
+        
+        
             <li><a href="../lists/modules.html">Modules</a></li>
-				
+        
             
                                 
             <li><a href="../lists/procedures.html">Procedures</a></li>
-				
-								
-				
-            <li><a href="../program/carlson_elliptic_test.html">Program</a></li>
-	    
+        
+               
+        
             </ul>
             </li>
 
-<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
+
 
 
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
@@ -88,8 +86,6 @@ All Procedures &ndash; carlson-elliptic-integrals
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
 
                              
-
-<li class="visible-xs hidden-sm visible-lg"><a href="../program/carlson_elliptic_test.html">Program</a></li>
 
           </ul>
         
@@ -116,157 +112,139 @@ All Procedures &ndash; carlson-elliptic-integrals
 			 <tbody>
 			 
 			   <tr><td><a href='../proc/drc.html'>drc</a></td><td><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></td><td>Function</td><td><p>Compute an approximation of the Carlson elliptic integral:
-  $$ R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt $$
-  where \(x\ge0\) and \(y&gt;0\).</p></td></tr>
+  <script type="math/tex; mode=display"> R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt </script>
+  where <script type="math/tex">x\ge0</script> and <script type="math/tex">y>0</script>.</p><a href="../proc/drc.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/drd.html'>drd</a></td><td><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></td><td>Function</td><td><p>Compute an approximation for the incomplete or
   complete elliptic integral of the 2nd kind:
-  $$ R_D(x,y,z) = \frac{3}{2} \int_{0}^{\infty}
+  <script type="math/tex; mode=display"> R_D(x,y,z) = \frac{3}{2} \int_{0}^{\infty}
                        (t+x)^{-1/2}
                        (t+y)^{-1/2}
-                       (t+z)^{-3/2} dt $$
-  Where \(x\ge0\), \(y\ge0\), \(x+y&gt;0\), and \(z&gt;0\).</p></td></tr>
+                       (t+z)^{-3/2} dt </script>
+  Where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, <script type="math/tex">x+y>0</script>, and <script type="math/tex">z>0</script>.</p><a href="../proc/drd.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/drf.html'>drf</a></td><td><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></td><td>Function</td><td><p>Compute an approximation for the incomplete or
   complete elliptic integral of the 1st kind:
-  $$ R_F(x,y,z) = \frac{1}{2} \int_{0}^{\infty}
+  <script type="math/tex; mode=display"> R_F(x,y,z) = \frac{1}{2} \int_{0}^{\infty}
                        (t+x)^{-1/2}
                        (t+y)^{-1/2}
-                       (t+z)^{-1/2} dt $$
-  Where \(x\ge0\), \(y\ge0\), \(z\ge0\), and at most one of
-  them is \(=0\).</p></td></tr>
+                       (t+z)^{-1/2} dt </script>
+  Where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, <script type="math/tex">z\ge0</script>, and at most one of
+  them is <script type="math/tex">=0</script>.</p><a href="../proc/drf.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			   <tr><td><a href='../proc/drj.html'>drj</a></td><td><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></td><td>Function</td><td><p>Compute an approximation for the incomplete or
   complete elliptic integral of the 3rd kind:
-  $$
+  <script type="math/tex; mode=display">
     R_J(x,y,z,p) = \frac{3}{2} \int_{0}^{\infty}
                    (t+x)^{-1/2} (t+y)^{-1/2} (t+z)^{-1/2} (t+p)^{-1} dt
-  $$
-  where \(x\ge0\), \(y\ge0\), and \(z\ge0\),
-  and at most one of them \(=0\), and \(p&gt;0\).</p></td></tr>
+  </script>
+  where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, and <script type="math/tex">z\ge0</script>,
+  and at most one of them <script type="math/tex">=0</script>, and <script type="math/tex">p>0</script>.</p><a href="../proc/drj.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
 			 
 			 </tbody></table>
-             
-                <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+             <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: call~~graph~~CallGraph Pages: 1 -->
-<svg id="callgraphCallGraph" width="204pt" height="122pt"
- viewBox="0.00 0.00 204.00 122.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 118)">
+<svg id="callgraphCallGraph" width="152pt" height="116pt"
+ viewBox="0.00 0.00 152.00 116.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
 <title>call~~graph~~CallGraph</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-118 201,-118 201,5 -4,5"/>
-<!-- proc~drj -->
-<g id="node1" class="node"><title>proc~drj</title>
-<a xlink:href="../proc/drj.html" xlink:title="drj">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="80,-114 26,-114 26,-88 80,-88 80,-114"/>
-<text text-anchor="middle" x="53" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drj</text>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 148,-112 148,4 -4,4"/>
+<!-- proc~drf -->
+<g id="call~~graph~~CallGraph_node1" class="node">
+<title>proc~drf</title>
+<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././proc/drf.html" xlink:title="drf">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drf</text>
 </a>
+</g>
 </g>
 <!-- proc~drc -->
-<g id="node2" class="node"><title>proc~drc</title>
-<a xlink:href="../proc/drc.html" xlink:title="drc">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="196,-114 142,-114 142,-88 196,-88 196,-114"/>
-<text text-anchor="middle" x="169" y="-98.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drc</text>
+<g id="call~~graph~~CallGraph_node2" class="node">
+<title>proc~drc</title>
+<g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././proc/drc.html" xlink:title="drc">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="144,-66 90,-66 90,-42 144,-42 144,-66"/>
+<text text-anchor="middle" x="117" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drc</text>
 </a>
+</g>
+</g>
+<!-- proc~drj -->
+<g id="call~~graph~~CallGraph_node3" class="node">
+<title>proc~drj</title>
+<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/drj.html" xlink:title="drj">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="54,-66 0,-66 0,-42 54,-42 54,-66"/>
+<text text-anchor="middle" x="27" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drj</text>
+</a>
+</g>
 </g>
 <!-- proc~drj&#45;&gt;proc~drc -->
-<g id="edge2" class="edge"><title>proc~drj&#45;&gt;proc~drc</title>
-<path fill="none" stroke="#000000" d="M80.1968,-101C95.6135,-101 115.12,-101 131.922,-101"/>
-<polygon fill="#000000" stroke="#000000" points="131.974,-104.5 141.974,-101 131.974,-97.5001 131.974,-104.5"/>
+<g id="call~~graph~~CallGraph_edge1" class="edge">
+<title>proc~drj&#45;&gt;proc~drc</title>
+<path fill="none" stroke="#000000" d="M54.4,-54C62.39,-54 71.31,-54 79.82,-54"/>
+<polygon fill="#000000" stroke="#000000" points="79.92,-57.5 89.92,-54 79.92,-50.5 79.92,-57.5"/>
 </g>
 <!-- proc~drd -->
-<g id="node3" class="node"><title>proc~drd</title>
-<a xlink:href="../proc/drd.html" xlink:title="drd">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="196,-70 142,-70 142,-44 196,-44 196,-70"/>
-<text text-anchor="middle" x="169" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drd</text>
+<g id="call~~graph~~CallGraph_node4" class="node">
+<title>proc~drd</title>
+<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././proc/drd.html" xlink:title="drd">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="54,-108 0,-108 0,-84 54,-84 54,-108"/>
+<text text-anchor="middle" x="27" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drd</text>
 </a>
 </g>
-<!-- proc~drf -->
-<g id="node4" class="node"><title>proc~drf</title>
-<a xlink:href="../proc/drf.html" xlink:title="drf">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="196,-26 142,-26 142,-1.24345e-14 196,-3.55271e-15 196,-26"/>
-<text text-anchor="middle" x="169" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">drf</text>
-</a>
-</g>
-<!-- program~carlson_elliptic_test -->
-<g id="node5" class="node"><title>program~carlson_elliptic_test</title>
-<a xlink:href="../program/carlson_elliptic_test.html" xlink:title="carlson_elliptic_test">
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="106,-70 3.55271e-14,-70 0,-44 106,-44 106,-70"/>
-<text text-anchor="middle" x="53" y="-54.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">carlson_elliptic_test</text>
-</a>
-</g>
-<!-- program~carlson_elliptic_test&#45;&gt;proc~drc -->
-<g id="edge6" class="edge"><title>program~carlson_elliptic_test&#45;&gt;proc~drc</title>
-<path fill="none" stroke="#000000" d="M87.4898,-70.0823C101.598,-75.4337 117.94,-81.6325 132.271,-87.0684"/>
-<polygon fill="#000000" stroke="#000000" points="131.228,-90.4159 141.819,-90.69 133.711,-83.8709 131.228,-90.4159"/>
-</g>
-<!-- program~carlson_elliptic_test&#45;&gt;proc~drd -->
-<g id="edge8" class="edge"><title>program~carlson_elliptic_test&#45;&gt;proc~drd</title>
-<path fill="none" stroke="#000000" d="M106.247,-57C114.778,-57 123.447,-57 131.509,-57"/>
-<polygon fill="#000000" stroke="#000000" points="131.696,-60.5001 141.695,-57 131.695,-53.5001 131.696,-60.5001"/>
-</g>
-<!-- program~carlson_elliptic_test&#45;&gt;proc~drf -->
-<g id="edge4" class="edge"><title>program~carlson_elliptic_test&#45;&gt;proc~drf</title>
-<path fill="none" stroke="#000000" d="M87.4898,-43.9177C101.598,-38.5663 117.94,-32.3675 132.271,-26.9316"/>
-<polygon fill="#000000" stroke="#000000" points="133.711,-30.1291 141.819,-23.31 131.228,-23.5841 133.711,-30.1291"/>
 </g>
 </g>
 </svg>
-</div>
-                <div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div>
-                <div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
-                      </div>
-                      <div class="modal-body">
-                        
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
     <p>Nodes of different colours represent the following: </p>
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Generated by graphviz version 2.26.3 (20100126.1600)
+<!-- Generated by graphviz version 2.43.0 (0)
  -->
 <!-- Title: Graph Key Pages: 1 -->
-<svg width="556pt" height="34pt"
- viewBox="0.00 0.00 556.00 34.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="graph1" class="graph" transform="scale(1 1) rotate(0) translate(4 30)">
+<svg width="597pt" height="32pt"
+ viewBox="0.00 0.00 596.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
 <title>Graph Key</title>
-<polygon fill="white" stroke="white" points="-4,5 -4,-30 553,-30 553,5 -4,5"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 592.5,-28 592.5,4 -4,4"/>
 <!-- Subroutine -->
-<g id="node1" class="node"><title>Subroutine</title>
-<polygon fill="#d9534f" stroke="#d9534f" points="64,-26 3.19744e-14,-26 0,-1.24345e-14 64,-3.55271e-15 64,-26"/>
-<text text-anchor="middle" x="32" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
 </g>
 <!-- Function -->
-<g id="node2" class="node"><title>Function</title>
-<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-26 82,-26 82,-1.24345e-14 136,-3.55271e-15 136,-26"/>
-<text text-anchor="middle" x="109" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
 </g>
 <!-- Interface -->
-<g id="node3" class="node"><title>Interface</title>
-<polygon fill="#a7506f" stroke="#a7506f" points="208,-26 154,-26 154,-1.24345e-14 208,-3.55271e-15 208,-26"/>
-<text text-anchor="middle" x="181" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
 </g>
 <!-- Unknown Procedure Type -->
-<g id="node4" class="node"><title>Unknown Procedure Type</title>
-<polygon fill="#777777" stroke="#777777" points="362,-26 226,-26 226,-1.24345e-14 362,-3.55271e-15 362,-26"/>
-<text text-anchor="middle" x="294" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="388.5,-24 243.5,-24 243.5,0 388.5,0 388.5,-24"/>
+<text text-anchor="middle" x="316" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
 </g>
 <!-- Program -->
-<g id="node5" class="node"><title>Program</title>
-<polygon fill="#f0ad4e" stroke="#f0ad4e" points="434,-26 380,-26 380,-1.24345e-14 434,-3.55271e-15 434,-26"/>
-<text text-anchor="middle" x="407" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="465,-24 407,-24 407,0 465,0 465,-24"/>
+<text text-anchor="middle" x="436" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
 </g>
 <!-- This Page&#39;s Entity -->
-<g id="node6" class="node"><title>This Page&#39;s Entity</title>
-<polygon fill="none" stroke="black" points="548,-26 452,-26 452,-1.24345e-14 548,-3.55271e-15 548,-26"/>
-<text text-anchor="middle" x="500" y="-10.55" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="588.5,-24 483.5,-24 483.5,0 588.5,0 588.5,-24"/>
+<text text-anchor="middle" x="536" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
 </g>
 </g>
 </svg>
@@ -277,12 +255,7 @@ All Procedures &ndash; carlson-elliptic-integrals
     This could include the module procedures in a generic interface or the
     implementation in a submodule of an interface in a parent module.
     </p>
-    
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
+    </div></div></div></div>
         </div>
       </div>
 
@@ -291,7 +264,8 @@ All Procedures &ndash; carlson-elliptic-integrals
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-4"><p>&copy; 2017 </p></div>
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 
+                                          </p></div>
         <div class="col-xs-6 col-md-4 col-md-push-4">
           <p class="text-right">
             Documentation generated by 
@@ -322,12 +296,17 @@ All Procedures &ndash; carlson-elliptic-integrals
       MathJax.Hub.Config({
         TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
         jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js'],
-        'HTML-CSS': { 
-           styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: '#000000 ! important'} }
-        }
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
   </body>
 </html>
