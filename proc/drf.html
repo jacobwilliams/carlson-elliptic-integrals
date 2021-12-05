@@ -359,14 +359,16 @@ public function drf(x, y, z, ier)
   <td></td>
   
   <td></td><td>::</td>
-  <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:
-<code>IER = 0</code>: Normal and reliable termination of the
- routine. It is assumed that the requested
- accuracy has been achieved.
-<code>IER &gt; 0</code>: Abnormal termination of the routine:
-<code>IER = 1</code>: <code>min(x,y,z) &lt; 0</code>
-<code>IER = 2</code>:<code>min(x+y,x+z,y+z) &lt; LOLIM</code>
-<code>IER = 3</code>: <code>max(x,y,z) &gt; UPLIM</code></p></td>
+  <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
+<ul>
+<li><code>IER = 0</code>: Normal and reliable termination of the
+  routine. It is assumed that the requested
+  accuracy has been achieved.</li>
+<li><code>IER &gt; 0</code>: Abnormal termination of the routine:</li>
+<li><code>IER = 1</code>: <code>min(x,y,z) &lt; 0</code></li>
+<li><code>IER = 2</code>:<code>min(x+y,x+z,y+z) &lt; LOLIM</code></li>
+<li><code>IER = 3</code>: <code>max(x,y,z) &gt; UPLIM</code></li>
+</ul></td>
   
 </tr>
 
@@ -454,13 +456,14 @@ public function drf(x, y, z, ier)
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">y</span>    <span class="c">!! nonnegative variable</span>
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">z</span>    <span class="c">!! nonnegative variable</span>
     <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ier</span>  <span class="c">!! indicates normal or abnormal termination:</span>
-                                <span class="c">!! `IER = 0`: Normal and reliable termination of the</span>
-                                <span class="c">!!  routine. It is assumed that the requested</span>
-                                <span class="c">!!  accuracy has been achieved.</span>
-                                <span class="c">!! `IER &gt; 0`: Abnormal termination of the routine:</span>
-                                <span class="c">!! `IER = 1`: `min(x,y,z) &lt; 0`</span>
-                                <span class="c">!! `IER = 2`:` min(x+y,x+z,y+z) &lt; LOLIM`</span>
-                                <span class="c">!! `IER = 3`: `max(x,y,z) &gt; UPLIM`</span>
+                                <span class="c">!!</span>
+                                <span class="c">!! * `IER = 0`: Normal and reliable termination of the</span>
+                                <span class="c">!!   routine. It is assumed that the requested</span>
+                                <span class="c">!!   accuracy has been achieved.</span>
+                                <span class="c">!! * `IER &gt; 0`: Abnormal termination of the routine:</span>
+                                <span class="c">!! * `IER = 1`: `min(x,y,z) &lt; 0`</span>
+                                <span class="c">!! * `IER = 2`:` min(x+y,x+z,y+z) &lt; LOLIM`</span>
+                                <span class="c">!! * `IER = 3`: `max(x,y,z) &gt; UPLIM`</span>
 
     <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xern3</span> <span class="p">,</span> <span class="n">xern4</span> <span class="p">,</span> <span class="n">xern5</span> <span class="p">,</span> <span class="n">xern6</span>
     <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">epslon</span><span class="p">,</span> <span class="n">e2</span> <span class="p">,</span> <span class="n">e3</span> <span class="p">,</span> <span class="n">lamda</span>

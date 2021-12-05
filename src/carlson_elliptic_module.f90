@@ -117,13 +117,14 @@
     real(wp),intent(in) :: x    !! nonnegative variable
     real(wp),intent(in) :: y    !! positive variable
     integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !! `IER = 0`: Normal and reliable termination of the
-                                !!  routine. It is assumed that the requested
-                                !!  accuracy has been achieved.
-                                !! `IER > 0`: Abnormal termination of the routine:
-                                !! `IER = 1`: `x<0 or y<=0`
-                                !! `IER = 2`: `x+y<LOLIM`
-                                !! `IER = 3`: `max(x,y) > UPLIM`
+                                !!
+                                !! * `IER = 0`: Normal and reliable termination of the
+                                !!   routine. It is assumed that the requested
+                                !!   accuracy has been achieved.
+                                !! * `IER > 0`: Abnormal termination of the routine:
+                                !! * `IER = 1`: `x<0 or y<=0`
+                                !! * `IER = 2`: `x+y<LOLIM`
+                                !! * `IER = 3`: `max(x,y) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5
     real(wp) :: lamda, mu , s , sn , xn , yn
@@ -343,13 +344,14 @@
     real(wp),intent(in) :: y    !! nonnegative variable (\(x+y>0\))
     real(wp),intent(in) :: z    !! positive variable
     integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !! `IER = 0`: Normal and reliable termination of the
-                                !!  routine. It is assumed that the requested
-                                !!  accuracy has been achieved.
-                                !! `IER > 0`: Abnormal termination of the routine:
-                                !! `IER = 1`: `min(x,y) < 0`
-                                !! `IER = 2`: `min(x + y, z ) < LOLIM`
-                                !! `IER = 3`: `max(x,y,z) > UPLIM`
+                                !!
+                                !! * `IER = 0`: Normal and reliable termination of the
+                                !!   routine. It is assumed that the requested
+                                !!   accuracy has been achieved.
+                                !! * `IER > 0`: Abnormal termination of the routine:
+                                !! * `IER = 1`: `min(x,y) < 0`
+                                !! * `IER = 2`: `min(x + y, z ) < LOLIM`
+                                !! * `IER = 3`: `max(x,y,z) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5 , xern6
     real(wp) :: epslon, ea , eb , ec , ed , ef , lamda
@@ -553,13 +555,14 @@
     real(wp),intent(in) :: y    !! nonnegative variable
     real(wp),intent(in) :: z    !! nonnegative variable
     integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !! `IER = 0`: Normal and reliable termination of the
-                                !!  routine. It is assumed that the requested
-                                !!  accuracy has been achieved.
-                                !! `IER > 0`: Abnormal termination of the routine:
-                                !! `IER = 1`: `min(x,y,z) < 0`
-                                !! `IER = 2`:` min(x+y,x+z,y+z) < LOLIM`
-                                !! `IER = 3`: `max(x,y,z) > UPLIM`
+                                !!
+                                !! * `IER = 0`: Normal and reliable termination of the
+                                !!   routine. It is assumed that the requested
+                                !!   accuracy has been achieved.
+                                !! * `IER > 0`: Abnormal termination of the routine:
+                                !! * `IER = 1`: `min(x,y,z) < 0`
+                                !! * `IER = 2`:` min(x+y,x+z,y+z) < LOLIM`
+                                !! * `IER = 3`: `max(x,y,z) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5 , xern6
     real(wp) :: epslon, e2 , e3 , lamda
@@ -798,12 +801,13 @@
     real(wp),intent(in) :: z    !! nonnegative variable
     real(wp),intent(in) :: p    !! positive variable
     integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !! `IER = 0`: Normal and reliable termination of the
-                                !!  routine. It is assumed that the requested
-                                !!  accuracy has been achieved.
-                                !! `IER = 1`: `min(x,y,z) < 0.0_wp`
-                                !! `IER = 2`: `min(x+y,x+z,y+z,p) < LOLIM`
-                                !! `IER = 3`: `max(x,y,z,p) > UPLIM`
+                                !!
+                                !! * `IER = 0`: Normal and reliable termination of the
+                                !!   routine. It is assumed that the requested
+                                !!   accuracy has been achieved.
+                                !! * `IER = 1`: `min(x,y,z) < 0.0_wp`
+                                !! * `IER = 2`: `min(x+y,x+z,y+z,p) < LOLIM`
+                                !! * `IER = 3`: `max(x,y,z,p) > UPLIM`
 
     character(len=16) xern3 , xern4 , xern5 , xern6 , xern7
     real(wp) :: alfa , beta , ea , eb , ec , e2 , e3, epslon
