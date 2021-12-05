@@ -1,0 +1,23 @@
+name = "carlson-elliptic-integrals"
+author = "Jacob Williams"
+copyright  = "Copyright (c) 2016-2021, Jacob Williams"
+license = "BSD-3"
+description = "Carlson symmetric forms of elliptic integrals"
+homepage = "https://github.com/jacobwilliams/carlson-elliptic-integrals"
+keywords = ["slatec", "elliptic integrals"]
+
+[build]
+auto-executables = false
+auto-examples = false
+auto-tests = false
+
+[library]
+source-dir = "src"
+
+[install]
+library = true
+
+[[test]]
+name = "carlson_elliptic_test"
+source-dir = "tests"
+main = "carlson_elliptic_test.f90"

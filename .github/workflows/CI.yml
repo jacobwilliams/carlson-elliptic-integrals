@@ -8,7 +8,7 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu-latest]
-        gcc_v: [9] # Version of GFortran we want to use.
+        gcc_v: [10] # Version of GFortran we want to use.
         python-version: [3.7]
     env:
       FC: gfortran-${{ matrix.gcc_v }}
@@ -28,11 +28,16 @@ jobs:
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
 
+    - name: Setup Fortran Package Manager
+      uses: fortran-lang/setup-fpm@v3
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Install Python dependencies
       if: contains( matrix.os, 'ubuntu')
       run: |
         python -m pip install --upgrade pip
-        pip install ford FoBiS.py
+        pip install ford
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - name: Install GFortran Linux
@@ -45,14 +50,11 @@ jobs:
         --slave /usr/bin/gfortran gfortran /usr/bin/gfortran-${GCC_V} \
         --slave /usr/bingcov gcov /usr/bin/gcov-${GCC_V}
 
-    - name: Compile  # clean this up later
-      run: |
-        mkdir ./bin
-        gfortran -O2 ./src/carlson_elliptic_module.f90 ./src/tests/carlson_elliptic_test.f90 -o ./bin/test
+    - name: Compile
+      run: fpm build --profile release
 
-    - name: Run tests
-      run: |
-        ./bin/test
+    - name: Run test
+      run: fpm test
 
     - name: Build documentation
       run: ford ./carlson_elliptic_integrals.md
