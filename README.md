@@ -1,3 +1,6 @@
+![carlson-elliptic-integrals](media/logo.png)
+============
+
 ### Status
 
 ![Build Status](https://github.com/jacobwilliams/carlson-elliptic-integrals/actions/workflows/CI.yml/badge.svg)
