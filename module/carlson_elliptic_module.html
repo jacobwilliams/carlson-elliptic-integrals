@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="Carlson symmetric forms of elliptic integrals">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,50 +43,23 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-               
-        
-        
+              
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-
-
-
-          </ul>
-        
+                                       </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -100,55 +68,31 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>carlson_elliptic_module 
     <small>Module</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
      <li><i class="fa fa-pencil"></i> Jacob Williams</li>
-     
-     
     <li><i class="fa fa-calendar-o"></i> 2/7/2016</li>
-     
-     
     <li><i class="fa fa-legal"></i> BSD</li>
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title="100.0% of total for modules and submodules.">288 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/carlson_elliptic_module.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/carlson_elliptic_module.f90.html'>carlson_elliptic_module.f90</a></li>
-    
-  
      <li class="active">carlson_elliptic_module</li>
   </ol>
 </div>
@@ -164,62 +108,28 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#variable-d1mach">d1mach</a>
-      
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-0">Functions</a></h3></div>
   <div id="funcs-0" class="panel-collapse collapse">
     <div class="list-group">
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drc">drc</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drd">drd</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drf">drf</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drj">drj</a>
-      
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 </div>
 
@@ -230,25 +140,16 @@
 <p>These routines are refactored versions of the ones from <a href="http://www.netlib.org/slatec/">SLATEC</a>.
  They have been converted into modern Fortran, and the documentation has been
  converted to FORD syntax.</p>
-      <br>
-    
-  
-    <div class="panel panel-default">
+<br>        <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Uses</h3>
       </div>
       <ul class="list-group">
-      
       <li class="list-group-item">
   <ul class="list-inline">
-    
     <li><a href="http://fortranwiki.org/fortran/show/iso_fortran_env">iso_fortran_env</a></li>
-    
   </ul>
       </li>
-      
-      
-      
       <li class="list-group-item">
   <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -343,100 +244,47 @@
     </p>
     </div></div></div></div>
       </li>
-      
       </ul>
     </div>
-    
 
     
-    
-
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#variable-d1mach">d1mach</a>
-      
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#funcs-1">Functions</a></h3></div>
   <div id="funcs-1" class="panel-collapse collapse">
     <div class="list-group">
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drc">drc</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drd">drd</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drf">drf</a>
-      
       <a class="list-group-item" href="../module/carlson_elliptic_module.html#proc-drj">drj</a>
-      
     </div>
   </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
     <section>
     <h2>Variables</h2>
-    
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th><th>Visibility</th>
-
-<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
-
-
-
+    <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Visibility</th><th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-d1mach"></span>real(kind=wp),</td>
-  
-  <td>private,</td>
-  <td>parameter, dimension(5)</td><td>::</td>
+<td>private,</td>  <td>parameter, dimension(5)</td><td>::</td>
   <td><strong>d1mach</strong></td><td> =</td><td>[tiny(1.0_wp), huge(1.0_wp), real(radix(1.0_wp), wp)**(-digits(1.0_wp)), epsilon(1.0_wp), log10(real(radix(1.0_wp), wp))]</td><td><p>Machine constants (replaces the old SLATEC <a href="http://www.netlib.org/slatec/src/d1mach.f">D1MACH</a> function)</p>
 <p>The traditional D1MACH constants are:
 * <code>D1MACH( 1) = B**(EMIN-1)</code>,           the smallest positive magnitude.
@@ -444,9 +292,7 @@
 * <code>D1MACH( 3) = B**(-T)</code>,               the smallest relative spacing.
 * <code>D1MACH( 4) = B**(1-T)</code>,              the largest relative spacing.
 * <code>D1MACH( 5) = LOG10(B)</code></p></td>
-  
 </tr>
-
 </tbody>
 </table>
 
@@ -454,94 +300,39 @@
     <br>
     
     
-    
-    
-    
 
     
     
-    
-    
-     
+ 
     <section>
     <h2>Functions</h2>
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-drc"></span><h3>
-public function <a href='../proc/drc.html'>drc</a>(x, y, ier)
-    
-    
-   
-</h3></div>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-drc"></span><h3>public function <a href='../proc/drc.html'>drc</a>(x, y, ier)</h3></div>
   <div class="panel-body">
        
-    
-
-
-
-
-
-
-
 <p>Compute an approximation of the Carlson elliptic integral:
   <script type="math/tex; mode=display"> R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt </script>
   where <script type="math/tex">x\ge0</script> and <script type="math/tex">y>0</script>.</p><a href="../proc/drc.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>x</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>y</strong></td><td><p>positive variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
 <ul>
 <li><code>IER = 0</code>: Normal and reliable termination of the
@@ -552,47 +343,19 @@ public function <a href='../proc/drc.html'>drc</a>(x, y, ier)
 <li><code>IER = 2</code>: <code>x+y&lt;LOLIM</code></li>
 <li><code>IER = 3</code>: <code>max(x,y) &gt; UPLIM</code></li>
 </ul></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>real(kind=wp)
-  </small></h4>
-  
-    
+<h4>Return Value <small>real(kind=wp)</small></h4>  
 
   </div>
   </div>
 
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-drd"></span><h3>
-public function <a href='../proc/drd.html'>drd</a>(x, y, z, ier)
-    
-    
-   
-</h3></div>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-drd"></span><h3>public function <a href='../proc/drd.html'>drd</a>(x, y, z, ier)</h3></div>
   <div class="panel-body">
        
-    
-
-
-
-
-
-
-
 <p>Compute an approximation for the incomplete or
   complete elliptic integral of the 2nd kind:
   <script type="math/tex; mode=display"> R_D(x,y,z) = \frac{3}{2} \int_{0}^{\infty}
@@ -601,75 +364,31 @@ public function <a href='../proc/drd.html'>drd</a>(x, y, z, ier)
                        (t+z)^{-3/2} dt </script>
   Where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, <script type="math/tex">x+y>0</script>, and <script type="math/tex">z>0</script>.</p><a href="../proc/drd.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>x</strong></td><td><p>nonnegative variable (<script type="math/tex">x+y>0</script>)</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>y</strong></td><td><p>nonnegative variable (<script type="math/tex">x+y>0</script>)</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>z</strong></td><td><p>positive variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
 <ul>
 <li><code>IER = 0</code>: Normal and reliable termination of the
@@ -680,47 +399,19 @@ public function <a href='../proc/drd.html'>drd</a>(x, y, z, ier)
 <li><code>IER = 2</code>: <code>min(x + y, z ) &lt; LOLIM</code></li>
 <li><code>IER = 3</code>: <code>max(x,y,z) &gt; UPLIM</code></li>
 </ul></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>real(kind=wp)
-  </small></h4>
-  
-    
+<h4>Return Value <small>real(kind=wp)</small></h4>  
 
   </div>
   </div>
 
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-drf"></span><h3>
-public function <a href='../proc/drf.html'>drf</a>(x, y, z, ier)
-    
-    
-   
-</h3></div>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-drf"></span><h3>public function <a href='../proc/drf.html'>drf</a>(x, y, z, ier)</h3></div>
   <div class="panel-body">
        
-    
-
-
-
-
-
-
-
 <p>Compute an approximation for the incomplete or
   complete elliptic integral of the 1st kind:
   <script type="math/tex; mode=display"> R_F(x,y,z) = \frac{1}{2} \int_{0}^{\infty}
@@ -730,75 +421,31 @@ public function <a href='../proc/drf.html'>drf</a>(x, y, z, ier)
   Where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, <script type="math/tex">z\ge0</script>, and at most one of
   them is <script type="math/tex">=0</script>.</p><a href="../proc/drf.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>x</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>y</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>z</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
 <ul>
 <li><code>IER = 0</code>: Normal and reliable termination of the
@@ -809,47 +456,19 @@ public function <a href='../proc/drf.html'>drf</a>(x, y, z, ier)
 <li><code>IER = 2</code>:<code>min(x+y,x+z,y+z) &lt; LOLIM</code></li>
 <li><code>IER = 3</code>: <code>max(x,y,z) &gt; UPLIM</code></li>
 </ul></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>real(kind=wp)
-  </small></h4>
-  
-    
+<h4>Return Value <small>real(kind=wp)</small></h4>  
 
   </div>
   </div>
 
-    
-    
-  <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="proc-drj"></span><h3>
-public function <a href='../proc/drj.html'>drj</a>(x, y, z, p, ier)
-    
-    
-   
-</h3></div>
+      <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-drj"></span><h3>public function <a href='../proc/drj.html'>drj</a>(x, y, z, p, ier)</h3></div>
   <div class="panel-body">
        
-    
-
-
-
-
-
-
-
 <p>Compute an approximation for the incomplete or
   complete elliptic integral of the 3rd kind:
   <script type="math/tex; mode=display">
@@ -859,90 +478,37 @@ public function <a href='../proc/drj.html'>drj</a>(x, y, z, p, ier)
   where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, and <script type="math/tex">z\ge0</script>,
   and at most one of them <script type="math/tex">=0</script>, and <script type="math/tex">p>0</script>.</p><a href="../proc/drj.html" class="pull-right"><emph>Read more&hellip;</emph></a>
     
-    <h4>Arguments</h4>
-    
-      
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+<h4>Arguments</h4>      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>x</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>y</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>z</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>p</strong></td><td><p>positive variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" ></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
 <ul>
 <li><code>IER = 0</code>: Normal and reliable termination of the
@@ -952,54 +518,34 @@ public function <a href='../proc/drj.html'>drj</a>(x, y, z, p, ier)
 <li><code>IER = 2</code>: <code>min(x+y,x+z,y+z,p) &lt; LOLIM</code></li>
 <li><code>IER = 3</code>: <code>max(x,y,z,p) &gt; UPLIM</code></li>
 </ul></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-      
-    
-    
-
-  
-  
-  
-  
-     <h4>Return Value <small>real(kind=wp)
-  </small></h4>
-  
-    
+<h4>Return Value <small>real(kind=wp)</small></h4>  
 
   </div>
   </div>
 
-    
     </section>
     <br>
-    
 
-    
-    
     
     </div>
   </div>
 
-  
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>carlson-elliptic-integrals was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>carlson-elliptic-integrals was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -1027,14 +573,11 @@ public function <a href='../proc/drj.html'>drj</a>(x, y, z, p, ier)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>

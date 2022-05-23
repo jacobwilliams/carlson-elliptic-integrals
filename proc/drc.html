@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-   
    <meta name="description" content="Carlson symmetric forms of elliptic integrals">
-    
     <meta name="author" content="Jacob Williams" >
     <link rel="icon" href="../favicon.png">
 
@@ -16,10 +14,7 @@
     <link href="../css/pygments.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
     <link href="../css/local.css" rel="stylesheet">
-    
     <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
-    
-    
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -48,50 +43,23 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-        
             <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
               <a href="#" class="dropdown-toggle"
               data-toggle="dropdown" role="button"
               aria-haspopup="true"
      aria-expanded="false">Contents <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          
-              
             <li><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
-        
-        
-        
             <li><a href="../lists/modules.html">Modules</a></li>
-        
-            
-                                
             <li><a href="../lists/procedures.html">Procedures</a></li>
-        
-               
-               
-        
-        
+              
             </ul>
         
             </li>
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
-
-
-
 <li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
-
-                             
-
-
-
-          </ul>
-        
+                                       </ul>
         <form action="../search.html" class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
@@ -100,51 +68,29 @@
         <button type="submit" class="btn btn-default">Submit</button>
 -->
         </form>
-        
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container">
-    
-  
   <div class="row">
     <h1>drc
       <small>Function</small>
-    
     </h1>
-    
-<div class="row">
+    <div class="row">
   <div class="col-lg-12">
 <div class="well well-sm">
   <ul class="list-inline" style="margin-bottom:0px;display:inline">
-     
-     
-     
-     
-     
-    
-    
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
     title="17.9% of total for procedures.">50 statements</a>
      </li> 
-     
-     
-     
     <li><i class="fa fa-code"></i><a href="../src/carlson_elliptic_module.f90"> Source File</a></li>
-     
-     
   </ul>
   <ol class="breadcrumb in-well text-right">
-  
-    
      <li><a href='../sourcefile/carlson_elliptic_module.f90.html'>carlson_elliptic_module.f90</a></li>
-    
      <li><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></li>
-    
-  
      <li class="active">drc</li>
   </ol>
 </div>
@@ -160,32 +106,9 @@
   
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-    
-<div id="sidebar">
-  
-<h3>Contents</h3>
+    <div id="sidebar">
+  <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -193,24 +116,14 @@
   </div>
 </div>
 
-
-
 </div>
 
     </div>
     
     <div class="col-md-9" id='text'>
-    <h2>
-public function drc(x, y, ier)
+    <h2>public function drc(x, y, ier)</h2>
     
-    
-   
-</h2>
-    
-  
 
-
-    
     <p>Compute an approximation of the Carlson elliptic integral:
   <script type="math/tex; mode=display"> R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt </script>
   where <script type="math/tex">x\ge0</script> and <script type="math/tex">y>0</script>.</p>
@@ -277,61 +190,27 @@ public function drc(x, y, ier)
 <li>Jan 2016, Refactored <a href="http://www.netlib.org/slatec/src/drc.f">SLATEC routine</a> into modern Fortran. (Jacob Williams)</li>
 </ul>
 <p></p><div class="alert alert-warning" role="alert"><h4>Warning</h4><p>Changes in the program may improve speed at the expense of robustness.</p></div>
-    
 
     <h3>Arguments</h3>
-    
-      
-<table class="table table-striped varlist">
-<thead><tr><th>Type</th>
-<th>Intent</th><th>Optional</th>
-<th>Attributes</th><th></th><th>Name</th><th></th></thead>
-
-
-
+      <table class="table table-striped varlist">
+<thead><tr><th>Type</th><th>Intent</th><th>Optional</th><th>Attributes</th><th></th><th>Name</th><th></th></thead>
 <tbody>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-x"></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>x</strong></td><td><p>nonnegative variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-y"></span>real(kind=wp),</td>
-  <td>intent(in)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(in)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>y</strong></td><td><p>positive variable</p></td>
-  
 </tr>
-
-  
-  
-  
-  
 <tr>
-  
   <td><span class="anchor" id="variable-ier"></span>integer,</td>
-  <td>intent(out)</td>
-  <td></td>
-  
-  <td></td><td>::</td>
+<td>intent(out)</td>
+  <td></td>  <td></td><td>::</td>
   <td><strong>ier</strong></td><td><p>indicates normal or abnormal termination:</p>
 <ul>
 <li><code>IER = 0</code>: Normal and reliable termination of the
@@ -342,28 +221,13 @@ public function drc(x, y, ier)
 <li><code>IER = 2</code>: <code>x+y&lt;LOLIM</code></li>
 <li><code>IER = 3</code>: <code>max(x,y) &gt; UPLIM</code></li>
 </ul></td>
-  
 </tr>
-
 </tbody>
 </table>
 
-    
-    
-    
-    
-    
-    
-    
-   <h3>Return Value <small><span class="anchor" id="variable-drc"></span>real(kind=wp)
-  </small></h3>
-    
-    
+   <h3>Return Value <small><span class="anchor" id="variable-drc"></span>real(kind=wp)</small></h3>
     
     <br>
-    
-    
-     
     <div class="panel panel-default">
       <div class="panel-heading">
   <h3 class="panel-title">Called by</h3>
@@ -464,34 +328,11 @@ public function drc(x, y, ier)
     </div></div></div></div>
       </div>
     </div>
-     
     <br>
 
     <section class="visible-xs visible-sm hidden-md">
-      
-<h3>Contents</h3>
+      <h3>Contents</h3>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="panel panel-primary">
   <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
   <div class="list-group">
@@ -499,162 +340,147 @@ public function drc(x, y, ier)
   </div>
 </div>
 
-
-
     </section>
     <br class="visible-xs visible-sm hidden-md">
 
-    
 
-    
-    
-    
     
     
 
     
     
-    
-    
-    
 
 
-    
-    
     
     <section>
     <h2><span class="anchor" id="src"></span>Source Code</h2>
-    <div class="highlight"><pre><span></span>    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="k">function </span><span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+    <div class="highlight"><pre><span></span><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">drc</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">implicit none</span>
+<span class="w">    </span><span class="k">implicit none</span>
 
-<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span>    <span class="c">!! nonnegative variable</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span> <span class="kd">::</span> <span class="n">y</span>    <span class="c">!! positive variable</span>
-    <span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ier</span>  <span class="c">!! indicates normal or abnormal termination:</span>
-                                <span class="c">!!</span>
-                                <span class="c">!! * `IER = 0`: Normal and reliable termination of the</span>
-                                <span class="c">!!   routine. It is assumed that the requested</span>
-                                <span class="c">!!   accuracy has been achieved.</span>
-                                <span class="c">!! * `IER &gt; 0`: Abnormal termination of the routine:</span>
-                                <span class="c">!! * `IER = 1`: `x&lt;0 or y&lt;=0`</span>
-                                <span class="c">!! * `IER = 2`: `x+y&lt;LOLIM`</span>
-                                <span class="c">!! * `IER = 3`: `max(x,y) &gt; UPLIM`</span>
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">    </span><span class="c">!! nonnegative variable</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y</span><span class="w">    </span><span class="c">!! positive variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ier</span><span class="w">  </span><span class="c">!! indicates normal or abnormal termination:</span>
+<span class="w">                                </span><span class="c">!!</span>
+<span class="w">                                </span><span class="c">!! * `IER = 0`: Normal and reliable termination of the</span>
+<span class="w">                                </span><span class="c">!!   routine. It is assumed that the requested</span>
+<span class="w">                                </span><span class="c">!!   accuracy has been achieved.</span>
+<span class="w">                                </span><span class="c">!! * `IER &gt; 0`: Abnormal termination of the routine:</span>
+<span class="w">                                </span><span class="c">!! * `IER = 1`: `x&lt;0 or y&lt;=0`</span>
+<span class="w">                                </span><span class="c">!! * `IER = 2`: `x+y&lt;LOLIM`</span>
+<span class="w">                                </span><span class="c">!! * `IER = 3`: `max(x,y) &gt; UPLIM`</span>
 
-    <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span> <span class="kd">::</span> <span class="n">xern3</span> <span class="p">,</span> <span class="n">xern4</span> <span class="p">,</span> <span class="n">xern5</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span> <span class="kd">::</span> <span class="n">lamda</span><span class="p">,</span> <span class="n">mu</span> <span class="p">,</span> <span class="n">s</span> <span class="p">,</span> <span class="n">sn</span> <span class="p">,</span> <span class="n">xn</span> <span class="p">,</span> <span class="n">yn</span>
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xern3</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xern4</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xern5</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lamda</span><span class="p">,</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">sn</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xn</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">yn</span><span class="w"></span>
 
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">errtol</span> <span class="o">=</span> <span class="p">(</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span><span class="mf">6.0_wp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mf">6.0_wp</span><span class="p">)</span>
-        <span class="c">!! Determines the accuracy of the answer.</span>
-        <span class="c">!!</span>
-        <span class="c">!! The value assigned by the routine will result</span>
-        <span class="c">!! in solution precision within 1-2 decimals of</span>
-        <span class="c">!! machine precision.</span>
-        <span class="c">!!</span>
-        <span class="c">!! Relative error due to truncation is less than</span>
-        <span class="c">!! `16 * ERRTOL ** 6 / (1 - 2 * ERRTOL)`.</span>
-        <span class="c">!!</span>
-        <span class="c">!! Sample choices:</span>
-        <span class="c">!! (ERRTOL, Relative truncation error less than):</span>
-        <span class="c">!! (1.0e-3, 2.0e-17),</span>
-        <span class="c">!! (3.0e-3, 2.0e-14),</span>
-        <span class="c">!! (1.0e-2, 2.0e-11),</span>
-        <span class="c">!! (3.0e-2, 2.0e-8),</span>
-        <span class="c">!! (1.0e-1, 2.0e-5)</span>
-        <span class="c">!!</span>
-        <span class="c">!! The accuracy of the computed approximation to the inte-</span>
-        <span class="c">!! gral can be controlled by choosing the value of ERRTOL.</span>
-        <span class="c">!! Truncation of a Taylor series after terms of fifth order</span>
-        <span class="c">!! introduces an error less than the amount shown in the</span>
-        <span class="c">!! second column of the following table for each value of</span>
-        <span class="c">!! ERRTOL in the first column.  In addition to the trunca-</span>
-        <span class="c">!! tion error there will be round-off error, but in prac-</span>
-        <span class="c">!! tice the total error from both sources is usually less</span>
-        <span class="c">!! than the amount given in the table.</span>
-        <span class="c">!!</span>
-        <span class="c">!! Decreasing ERRTOL by a factor of 10 yields six more</span>
-        <span class="c">!! decimal digits of accuracy at the expense of one or</span>
-        <span class="c">!! two more iterations of the duplication theorem.</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">lolim</span>  <span class="o">=</span> <span class="mf">5.0_wp</span><span class="o">*</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c">!! Lower limit of valid arguments</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">uplim</span>  <span class="o">=</span> <span class="n">d1mach</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0_wp</span> <span class="c">!! Upper limit of valid arguments</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">c1</span>     <span class="o">=</span> <span class="mf">1.0_wp</span><span class="o">/</span><span class="mf">7.0_wp</span>
-    <span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span> <span class="kd">::</span> <span class="n">c2</span>     <span class="o">=</span> <span class="mf">9.0_wp</span><span class="o">/</span><span class="mi">2</span><span class="mf">2.0_wp</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">errtol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">1</span><span class="mf">6.0_wp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mf">6.0_wp</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="c">!! Determines the accuracy of the answer.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! The value assigned by the routine will result</span>
+<span class="w">        </span><span class="c">!! in solution precision within 1-2 decimals of</span>
+<span class="w">        </span><span class="c">!! machine precision.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Relative error due to truncation is less than</span>
+<span class="w">        </span><span class="c">!! `16 * ERRTOL ** 6 / (1 - 2 * ERRTOL)`.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Sample choices:</span>
+<span class="w">        </span><span class="c">!! (ERRTOL, Relative truncation error less than):</span>
+<span class="w">        </span><span class="c">!! (1.0e-3, 2.0e-17),</span>
+<span class="w">        </span><span class="c">!! (3.0e-3, 2.0e-14),</span>
+<span class="w">        </span><span class="c">!! (1.0e-2, 2.0e-11),</span>
+<span class="w">        </span><span class="c">!! (3.0e-2, 2.0e-8),</span>
+<span class="w">        </span><span class="c">!! (1.0e-1, 2.0e-5)</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! The accuracy of the computed approximation to the inte-</span>
+<span class="w">        </span><span class="c">!! gral can be controlled by choosing the value of ERRTOL.</span>
+<span class="w">        </span><span class="c">!! Truncation of a Taylor series after terms of fifth order</span>
+<span class="w">        </span><span class="c">!! introduces an error less than the amount shown in the</span>
+<span class="w">        </span><span class="c">!! second column of the following table for each value of</span>
+<span class="w">        </span><span class="c">!! ERRTOL in the first column.  In addition to the trunca-</span>
+<span class="w">        </span><span class="c">!! tion error there will be round-off error, but in prac-</span>
+<span class="w">        </span><span class="c">!! tice the total error from both sources is usually less</span>
+<span class="w">        </span><span class="c">!! than the amount given in the table.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Decreasing ERRTOL by a factor of 10 yields six more</span>
+<span class="w">        </span><span class="c">!! decimal digits of accuracy at the expense of one or</span>
+<span class="w">        </span><span class="c">!! two more iterations of the duplication theorem.</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lolim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0_wp</span><span class="o">*</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c">!! Lower limit of valid arguments</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">uplim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">d1mach</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0_wp</span><span class="w"> </span><span class="c">!! Upper limit of valid arguments</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mf">7.0_wp</span><span class="w"></span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c2</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">9.0_wp</span><span class="o">/</span><span class="mi">2</span><span class="mf">2.0_wp</span><span class="w"></span>
 
-    <span class="c">!initialize:</span>
-    <span class="n">drc</span> <span class="o">=</span> <span class="mf">0.0_wp</span>
+<span class="w">    </span><span class="c">!initialize:</span>
+<span class="w">    </span><span class="n">drc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_wp</span><span class="w"></span>
 
-    <span class="c">! check for errors:</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">x</span><span class="o">&lt;</span><span class="mf">0.0_wp</span> <span class="p">.</span><span class="nb">or</span><span class="p">.</span> <span class="n">y</span><span class="o">&lt;=</span><span class="mf">0.0_wp</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">x</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">y</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
-            <span class="s1">&#39;drc: x&lt;0 .or. y&lt;=0 where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; and y = &#39;</span><span class="o">//</span><span class="n">xern4</span>
-        <span class="k">return</span>
+<span class="w">    </span><span class="c">! check for errors:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="o">&lt;</span><span class="mf">0.0_wp</span><span class="w"> </span><span class="p">.</span><span class="nb">or</span><span class="p">.</span><span class="w"> </span><span class="n">y</span><span class="o">&lt;=</span><span class="mf">0.0_wp</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="s1">&#39;drc: x&lt;0 .or. y&lt;=0 where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; and y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span>
 <span class="k">    endif</span>
 
-<span class="k">    if</span> <span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">&gt;</span><span class="n">uplim</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">3</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">x</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">y</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">uplim</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
-            <span class="s1">&#39;drc: max(x,y)&gt;uplim where x = &#39;</span><span class="o">//</span><span class="p">&amp;</span>
-            <span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and uplim = &#39;</span><span class="o">//</span><span class="n">xern5</span>
-        <span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span><span class="o">&gt;</span><span class="n">uplim</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">uplim</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="s1">&#39;drc: max(x,y)&gt;uplim where x = &#39;</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and uplim = &#39;</span><span class="o">//</span><span class="n">xern5</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span>
 <span class="k">    endif</span>
 
-<span class="k">    if</span> <span class="p">(</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">&lt;</span><span class="n">lolim</span> <span class="p">)</span> <span class="k">then</span>
-<span class="k">        </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">x</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">y</span>
-        <span class="k">write</span> <span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span> <span class="n">lolim</span>
-        <span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span> <span class="p">&amp;</span>
-            <span class="s1">&#39;drc: x+y&lt;lolim where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="p">&amp;</span>
-            <span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and lolim = &#39;</span><span class="o">//</span><span class="n">xern5</span>
-        <span class="k">return</span>
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">&lt;</span><span class="n">lolim</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">lolim</span><span class="w"></span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="s1">&#39;drc: x+y&lt;lolim where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="p">&amp;</span><span class="w"></span>
+<span class="w">            </span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and lolim = &#39;</span><span class="o">//</span><span class="n">xern5</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span>
 <span class="k">    endif</span>
 
-<span class="k">    </span><span class="n">ier</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">xn</span> <span class="o">=</span> <span class="n">x</span>
-    <span class="n">yn</span> <span class="o">=</span> <span class="n">y</span>
+<span class="k">    </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">xn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="w"></span>
+<span class="w">    </span><span class="n">yn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
 
-    <span class="k">do</span>
-<span class="k">        </span><span class="n">mu</span> <span class="o">=</span> <span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">yn</span><span class="o">+</span><span class="n">yn</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0_wp</span>
-        <span class="n">sn</span> <span class="o">=</span> <span class="p">(</span><span class="n">yn</span><span class="o">+</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span> <span class="o">-</span> <span class="mf">2.0_wp</span>
-        <span class="k">if</span> <span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span><span class="o">&lt;</span><span class="n">errtol</span> <span class="p">)</span> <span class="k">exit</span>
-<span class="k">        </span><span class="n">lamda</span> <span class="o">=</span> <span class="mf">2.0_wp</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">yn</span><span class="p">)</span> <span class="o">+</span> <span class="n">yn</span>
-        <span class="n">xn</span> <span class="o">=</span> <span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span>
-        <span class="n">yn</span> <span class="o">=</span> <span class="p">(</span><span class="n">yn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span>
-    <span class="k">end do</span>
+<span class="w">    </span><span class="k">do</span>
+<span class="k">        </span><span class="n">mu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">yn</span><span class="o">+</span><span class="n">yn</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0_wp</span><span class="w"></span>
+<span class="w">        </span><span class="n">sn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">yn</span><span class="o">+</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="w"></span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span><span class="o">&lt;</span><span class="n">errtol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">        </span><span class="n">lamda</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span><span class="o">*</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">yn</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">yn</span><span class="w"></span>
+<span class="w">        </span><span class="n">xn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span><span class="w"></span>
+<span class="w">        </span><span class="n">yn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">yn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span><span class="w"></span>
+<span class="w">    </span><span class="k">end do</span>
 
-<span class="k">    </span><span class="n">s</span> <span class="o">=</span> <span class="n">sn</span><span class="o">*</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="mf">0.30_wp</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="n">c1</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="mf">0.3750_wp</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="n">c2</span><span class="p">)))</span>
-    <span class="n">drc</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0_wp</span><span class="o">+</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+<span class="k">    </span><span class="n">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sn</span><span class="o">*</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="mf">0.30_wp</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="n">c1</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="p">(</span><span class="mf">0.3750_wp</span><span class="o">+</span><span class="n">sn</span><span class="o">*</span><span class="n">c2</span><span class="p">)))</span><span class="w"></span>
+<span class="w">    </span><span class="n">drc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">1.0_wp</span><span class="o">+</span><span class="n">s</span><span class="p">)</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span><span class="w"></span>
 
-    <span class="k">end function </span><span class="n">drc</span>
+<span class="w">    </span><span class="k">end function </span><span class="n">drc</span><span class="w"></span>
 </pre></div>
 
     </section>
     <br>
     
-    
     </div>
   </div>
-
 
     <hr>    
     </div> <!-- /container -->
     <footer>
       <div class="container">
       <div class="row">
-        <div class="col-xs-6 col-md-6"><p>carlson-elliptic-integrals was developed by Jacob Williams<br>&copy; 2021 
-                                          </p>
+        <div class="col-xs-6 col-md-6"><p>carlson-elliptic-integrals was developed by Jacob Williams<br>&copy; 2022 
+</p>
         </div>
         <div class="col-xs-6 col-md-6">
           <p class="text-right">
             Documentation generated by 
             <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
-            
-            
           </p>
         </div>
       </div>
@@ -682,14 +508,11 @@ public function drc(x, y, ier)
         extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
       });
     </script>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
     
     <script src="../tipuesearch/tipuesearch_content.js"></script>
     <script src="../tipuesearch/tipuesearch_set.js"></script>
     <script src="../tipuesearch/tipuesearch.js"></script>
-    
     
   </body>
 </html>
