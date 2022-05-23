@@ -17,6 +17,8 @@
 
     private
 
+    integer,parameter,public :: carlson_elliptic_module_wp = wp
+
     !**************************************************************
     !>
     !  Machine constants (replaces the old SLATEC [D1MACH](http://www.netlib.org/slatec/src/d1mach.f) function)
