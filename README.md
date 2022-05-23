@@ -3,7 +3,10 @@
 
 ### Status
 
-![Build Status](https://github.com/jacobwilliams/carlson-elliptic-integrals/actions/workflows/CI.yml/badge.svg)
+[![GitHub release](https://img.shields.io/github/release/jacobwilliams/carlson-elliptic-integrals.svg)](https://github.com/jacobwilliams/carlson-elliptic-integrals/releases/latest)
+[![CI Status](https://github.com/jacobwilliams/carlson-elliptic-integrals/actions/workflows/CI.yml/badge.svg)](https://github.com/jacobwilliams/carlson-elliptic-integrals/actions)
+[![codecov](https://codecov.io/gh/jacobwilliams/carlson-elliptic-integrals/branch/master/graph/badge.svg)](https://codecov.io/gh/jacobwilliams/carlson-elliptic-integrals)
+[![last-commit](https://img.shields.io/github/last-commit/jacobwilliams/carlson-elliptic-integrals)](https://github.com/jacobwilliams/carlson-elliptic-integrals/commits/master)
 
 ### Description
 
@@ -39,7 +42,7 @@ carson-elliptic-intergrals = { git="https://github.com/jacobwilliams/carson-elli
 
 ### Documentation
 
-The latest API documentation for the `master` branch can be found [here](http://jacobwilliams.github.io/carlson-elliptic-integrals/). This was generated from the source code using [FORD](https://github.com/Fortran-FOSS-Programmers/ford).
+The latest API documentation for the `master` branch can be found [here](https://jacobwilliams.github.io/carlson-elliptic-integrals/). This was generated from the source code using [FORD](https://github.com/Fortran-FOSS-Programmers/ford).
 
 ### License
 
