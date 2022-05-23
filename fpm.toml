@@ -9,15 +9,10 @@ keywords = ["slatec", "elliptic integrals"]
 [build]
 auto-executables = false
 auto-examples = false
-auto-tests = false
+auto-tests = true
 
 [library]
 source-dir = "src"
 
 [install]
 library = true
-
-[[test]]
-name = "carlson_elliptic_test"
-source-dir = "tests"
-main = "carlson_elliptic_test.f90"
