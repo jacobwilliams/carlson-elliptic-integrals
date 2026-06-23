@@ -1,0 +1,616 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Carlson symmetric forms of elliptic integrals">
+    <meta name="author" content="Jacob Williams" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>drf &ndash; carlson-elliptic-integrals</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">carlson-elliptic-integrals </a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../sourcefile/carlson_elliptic_module.f90.html">Source File</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>drf
+      <small>Function</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="23.1% of total for procedures.">67 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/carlson_elliptic_module.F90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/carlson_elliptic_module.f90.html'>carlson_elliptic_module.F90</a></li>
+                <li class="breadcrumb-item"><a href='../module/carlson_elliptic_module.html'>carlson_elliptic_module</a></li>
+            <li class="breadcrumb-item active" aria-current="page">drf</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/drf.html#src">drf</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <h2>public  function drf(x, y, z, ier)  
+</h2>
+    
+
+    <p>Compute an approximation for the incomplete or
+  complete elliptic integral of the 1st kind:
+  <script type="math/tex; mode=display"> R_F(x,y,z) = \frac{1}{2} \int_{0}^{\infty}
+                       (t+x)^{-1/2}
+                       (t+y)^{-1/2}
+                       (t+z)^{-1/2} dt </script>
+  Where <script type="math/tex">x\ge0</script>, <script type="math/tex">y\ge0</script>, <script type="math/tex">z\ge0</script>, and at most one of
+  them is <script type="math/tex">=0</script>.</p>
+<p>If <script type="math/tex">x=0</script>, <script type="math/tex">y=0</script>, or <script type="math/tex">z=0</script>, the integral is complete.</p>
+<p>The duplication theorem is iterated until the variables are
+  nearly equal, and the function is then expanded in Taylor
+  series to fifth order.</p>
+<h3>DRF Special Comments</h3>
+<p>
+<script type="math/tex; mode=display">
+    \begin{array}{rl}
+    R_F(x,x+z,x+w) + R_F(y,y+z,y+w) = R_F(0,z,w)
+    & x>0, y>0, z>0, x y = z w
+    \end{array}
+  </script>
+</p>
+<h3>Special functions via DRF</h3>
+<ul>
+<li>
+<p>Legendre form of ELLIPTIC INTEGRAL of 1st kind:</p>
+<p>
+<script type="math/tex; mode=display">
+\begin{array}{rl}
+  F(\phi,k) &= \sin \phi R_F( \cos^2 \phi,1-k^2 \sin^2 \phi,1) \!           K(k) &= R_F(0,1-k^2 ,1) = \int_{0}^{\pi/2} (1-k^2 sin^2 \phi )^{-1/2} d \phi
+\end{array}
+</script>
+</p>
+</li>
+<li>
+<p>Bulirsch form of ELLIPTIC INTEGRAL of 1st kind:</p>
+<p>
+<script type="math/tex; mode=display">
+  \mathrm{EL1}(x,k_c) = x R_F(1,1+k_c^2 x^2 ,1+x^2 )
+</script>
+</p>
+</li>
+<li>
+<p>Lemniscate constant A:</p>
+<p>
+<script type="math/tex; mode=display">
+  A = \int_{0}^{1} (1-s^4 )^{-1/2}    ds = R_F(0,1,2) = R_F(0,2,1)
+</script>
+</p>
+</li>
+</ul>
+<h3>References</h3>
+<ul>
+<li>B. C. Carlson and E. M. Notis, <a href="http://dl.acm.org/citation.cfm?id=355970">Algorithms for incomplete
+    elliptic integrals</a>,
+    ACM Transactions on Mathematical
+    Software 7, 3 (September 1981), pp. 398-403.</li>
+<li>B. C. Carlson, Computing elliptic integrals by
+    duplication, Numerische Mathematik 33, (1979),
+    pp. 1-16.</li>
+<li>B. C. Carlson, Elliptic integrals of the first kind,
+    SIAM Journal of Mathematical Analysis 8, (1977),
+    pp. 231-242.</li>
+</ul>
+<h3>History</h3>
+<ul>
+<li>790801  DATE WRITTEN</li>
+<li>890531  Changed all specific intrinsics to generic.  (WRB)</li>
+<li>891009  Removed unreferenced statement labels.  (WRB)</li>
+<li>891009  REVISION DATE from Version 3.2</li>
+<li>891214  Prologue converted to Version 4.0 format.  (BAB)</li>
+<li>900315  CALLs to XERROR changed to CALLs to XERMSG.  (THJ)</li>
+<li>900326  Removed duplicate information from DESCRIPTION section. (WRB)</li>
+<li>900510  Changed calls to XERMSG to standard form, and some editorial changes.  (RWC))</li>
+<li>920501  Reformatted the REFERENCES section.  (WRB)</li>
+<li>Jan 2016, Refactored <a href="http://www.netlib.org/slatec/src/drf.f">SLATEC routine</a> into modern Fortran. (Jacob Williams)</li>
+</ul>
+<div class="alert alert-warning">
+<p class="alert-title h4">Warning</p>
+<p>Changes in the program may improve speed at the expense of robustness.</p>
+</div>
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-x~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>x</strong></td>
+            <td>
+                <p>nonnegative variable</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-y~3"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>y</strong></td>
+            <td>
+                <p>nonnegative variable</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-z~2"></span>
+              real(kind=wp),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>z</strong></td>
+            <td>
+                <p>nonnegative variable</p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ier~4"></span>
+              integer,
+            </td>
+<td>intent(out),</td>
+              <td>optional</td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ier</strong></td>
+            <td>
+                <p>indicates normal or abnormal termination:</p>
+<ul>
+<li><code>IER = 0</code>: Normal and reliable termination of the
+  routine. It is assumed that the requested
+  accuracy has been achieved.</li>
+<li><code>IER &gt; 0</code>: Abnormal termination of the routine:</li>
+<li><code>IER = 1</code>: <code>min(x,y,z) &lt; 0</code></li>
+<li><code>IER = 2</code>:<code>min(x+y,x+z,y+z) &lt; LOLIM</code></li>
+<li><code>IER = 3</code>: <code>max(x,y,z) &gt; UPLIM</code></li>
+</ul>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-drf"></span>
+          real(kind=wp)
+        </small>
+      </h3>
+      
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: proc~~drf~~CallsGraph Pages: 1 -->
+<svg id="procdrfCallsGraph" width="183pt" height="32pt"
+ viewBox="0.00 0.00 183.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~drf~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~drf~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 179,-28 179,4 -4,4"/>
+<!-- proc~drf -->
+<g id="proc~~drf~~CallsGraph_node1" class="node">
+<title>proc~drf</title>
+<polygon fill="none" stroke="black" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">drf</text>
+</g>
+<!-- proc~error_handler -->
+<g id="proc~~drf~~CallsGraph_node2" class="node">
+<title>proc~error_handler</title>
+<g id="a_proc~~drf~~CallsGraph_node2"><a xlink:href="../proc/error_handler.html" xlink:title="error_handler">
+<polygon fill="#d9534f" stroke="#d9534f" points="175,-24 90,-24 90,0 175,0 175,-24"/>
+<text text-anchor="middle" x="132.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">error_handler</text>
+</a>
+</g>
+</g>
+<!-- proc~drf&#45;&gt;proc~error_handler -->
+<g id="proc~~drf~~CallsGraph_edge1" class="edge">
+<title>proc~drf&#45;&gt;proc~error_handler</title>
+<path fill="none" stroke="#000000" d="M54.12,-12C61.87,-12 70.64,-12 79.42,-12"/>
+<polygon fill="#000000" stroke="#000000" points="79.68,-15.5 89.68,-12 79.68,-8.5 79.68,-15.5"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.43.0 (0)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 27.51" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.86 0.86) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 741.5,-28 741.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="70,-24 0,-24 0,0 70,0 70,-24"/>
+<text text-anchor="middle" x="35" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="146,-24 88,-24 88,0 146,0 146,-24"/>
+<text text-anchor="middle" x="117" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="225.5,-24 164.5,-24 164.5,0 225.5,0 225.5,-24"/>
+<text text-anchor="middle" x="195" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="374,-24 244,-24 244,0 374,0 374,-24"/>
+<text text-anchor="middle" x="309" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="537.5,-24 392.5,-24 392.5,0 537.5,0 537.5,-24"/>
+<text text-anchor="middle" x="465" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="614,-24 556,-24 556,0 614,0 614,-24"/>
+<text text-anchor="middle" x="585" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="737.5,-24 632.5,-24 632.5,0 737.5,0 737.5,-24"/>
+<text text-anchor="middle" x="685" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+
+
+    
+    
+
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="k">function </span><span class="n">drf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">ier</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">implicit none</span>
+
+<span class="k">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span><span class="w">    </span><span class="c">!! nonnegative variable</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">y</span><span class="w">    </span><span class="c">!! nonnegative variable</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">z</span><span class="w">    </span><span class="c">!! nonnegative variable</span>
+<span class="w">    </span><span class="kt">integer</span><span class="p">,</span><span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">),</span><span class="k">optional</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">ier</span><span class="w">  </span><span class="c">!! indicates normal or abnormal termination:</span>
+<span class="w">                                         </span><span class="c">!!</span>
+<span class="w">                                         </span><span class="c">!! * `IER = 0`: Normal and reliable termination of the</span>
+<span class="w">                                         </span><span class="c">!!   routine. It is assumed that the requested</span>
+<span class="w">                                         </span><span class="c">!!   accuracy has been achieved.</span>
+<span class="w">                                         </span><span class="c">!! * `IER &gt; 0`: Abnormal termination of the routine:</span>
+<span class="w">                                         </span><span class="c">!! * `IER = 1`: `min(x,y,z) &lt; 0`</span>
+<span class="w">                                         </span><span class="c">!! * `IER = 2`:` min(x+y,x+z,y+z) &lt; LOLIM`</span>
+<span class="w">                                         </span><span class="c">!! * `IER = 3`: `max(x,y,z) &gt; UPLIM`</span>
+
+<span class="w">    </span><span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xern3</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xern4</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xern5</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xern6</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">epslon</span><span class="p">,</span><span class="w"> </span><span class="n">e2</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">e3</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">lamda</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">mu</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xn</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">xndev</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">)</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">xnroot</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">yn</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">yndev</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">ynroot</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">zn</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">zndev</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="n">znroot</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">errtol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mf">4.0_wp</span><span class="o">*</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mf">6.0_wp</span><span class="p">)</span>
+<span class="w">        </span><span class="c">!! Determines the accuracy of the answer.</span>
+<span class="w">        </span><span class="c">!! The value assigned by the routine will result</span>
+<span class="w">        </span><span class="c">!! in solution precision within 1-2 decimals of</span>
+<span class="w">        </span><span class="c">!! machine precision.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Relative error due to truncation is less than</span>
+<span class="w">        </span><span class="c">!! `ERRTOL ** 6 / (4 * (1-ERRTOL)`.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! The accuracy of the computed approximation to the integral</span>
+<span class="w">        </span><span class="c">!! can be controlled by choosing the value of ERRTOL.</span>
+<span class="w">        </span><span class="c">!! Truncation of a Taylor series after terms of fifth order</span>
+<span class="w">        </span><span class="c">!! introduces an error less than the amount shown in the</span>
+<span class="w">        </span><span class="c">!! second column of the following table for each value of</span>
+<span class="w">        </span><span class="c">!! ERRTOL in the first column.  In addition to the truncation</span>
+<span class="w">        </span><span class="c">!! error there will be round-off error, but in practice the</span>
+<span class="w">        </span><span class="c">!! total error from both sources is usually less than the</span>
+<span class="w">        </span><span class="c">!! amount given in the table.</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Sample choices:</span>
+<span class="w">        </span><span class="c">!! (ERRTOL, Relative truncation error less than):</span>
+<span class="w">        </span><span class="c">!! (1.0e-3, 3.0e-19),</span>
+<span class="w">        </span><span class="c">!! (3.0e-3, 2.0e-16),</span>
+<span class="w">        </span><span class="c">!! (1.0e-2, 3.0e-13),</span>
+<span class="w">        </span><span class="c">!! (3.0e-2, 2.0e-10),</span>
+<span class="w">        </span><span class="c">!! (1.0e-1, 3.0e-7)</span>
+<span class="w">        </span><span class="c">!!</span>
+<span class="w">        </span><span class="c">!! Decreasing ERRTOL by a factor of 10 yields six more</span>
+<span class="w">        </span><span class="c">!! decimal digits of accuracy at the expense of one or</span>
+<span class="w">        </span><span class="c">!! two more iterations of the duplication theorem.</span>
+
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">lolim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">5.0_wp</span><span class="o">*</span><span class="n">d1mach</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c">!! Lower limit of valid arguments</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">uplim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">d1mach</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mf">5.0_wp</span><span class="w"> </span><span class="c">!! Upper limit of valid arguments</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c1</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mi">2</span><span class="mf">4.0_wp</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c2</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">3.0_wp</span><span class="o">/</span><span class="mi">4</span><span class="mf">4.0_wp</span>
+<span class="w">    </span><span class="kt">real</span><span class="p">(</span><span class="n">wp</span><span class="p">),</span><span class="k">parameter</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">c3</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="o">/</span><span class="mi">1</span><span class="mf">4.0_wp</span>
+
+<span class="w">    </span><span class="c">! initialize:</span>
+<span class="w">    </span><span class="n">drf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_wp</span>
+
+<span class="w">    </span><span class="c">! check for errors:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="o">&lt;</span><span class="mf">0.0_wp</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">z</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;drf: min(x,y,z)&lt;0 where x = &#39;</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; and z = &#39;</span><span class="o">//</span><span class="n">xern5</span>
+<span class="w">        </span><span class="k">call </span><span class="n">error_handler</span><span class="p">(</span><span class="s1">&#39;drf&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ier</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span><span class="o">&gt;</span><span class="n">uplim</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">z</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern6</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">uplim</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;drf: max(x,y,z)&gt;uplim where x = &#39;</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="n">xern3</span><span class="o">//</span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; z = &#39;</span><span class="o">//</span><span class="n">xern5</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s1">&#39; and uplim = &#39;</span><span class="o">//</span><span class="n">xern6</span>
+<span class="w">        </span><span class="k">call </span><span class="n">error_handler</span><span class="p">(</span><span class="s1">&#39;drf&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ier</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="nb">min</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="n">z</span><span class="p">,</span><span class="n">y</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">&lt;</span><span class="n">lolim</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">then</span>
+<span class="k">        write</span><span class="w"> </span><span class="p">(</span><span class="n">xern3</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">x</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern4</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">y</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern5</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">z</span>
+<span class="w">        </span><span class="k">write</span><span class="w"> </span><span class="p">(</span><span class="n">xern6</span><span class="p">,</span><span class="s1">&#39;(1pe15.6)&#39;</span><span class="p">)</span><span class="w"> </span><span class="n">lolim</span>
+<span class="w">        </span><span class="k">write</span><span class="p">(</span><span class="n">error_unit</span><span class="p">,</span><span class="s1">&#39;(a)&#39;</span><span class="p">)</span><span class="w"> </span><span class="s1">&#39;drf: min(x+y,x+z,y+z)&lt;lolim where x = &#39;</span><span class="o">//</span><span class="n">xern3</span><span class="o">//</span><span class="w"> </span><span class="p">&amp;</span>
+<span class="w">                </span><span class="s1">&#39; y = &#39;</span><span class="o">//</span><span class="n">xern4</span><span class="o">//</span><span class="s1">&#39; z = &#39;</span><span class="o">//</span><span class="n">xern5</span><span class="o">//</span><span class="s1">&#39; and lolim = &#39;</span><span class="o">//</span><span class="n">xern6</span>
+<span class="w">        </span><span class="k">call </span><span class="n">error_handler</span><span class="p">(</span><span class="s1">&#39;drf&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">ier</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span>
+<span class="k">    endif</span>
+
+<span class="k">    if</span><span class="w"> </span><span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">ier</span><span class="p">))</span><span class="w"> </span><span class="n">ier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="n">xn</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">x</span>
+<span class="w">    </span><span class="n">yn</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">y</span>
+<span class="w">    </span><span class="n">zn</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">z</span>
+
+<span class="w">    </span><span class="k">do</span>
+<span class="k">        </span><span class="n">mu</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">yn</span><span class="o">+</span><span class="n">zn</span><span class="p">)</span><span class="o">/</span><span class="mf">3.0_wp</span>
+<span class="w">        </span><span class="n">xndev</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">mu</span><span class="o">+</span><span class="n">xn</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span>
+<span class="w">        </span><span class="n">yndev</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">mu</span><span class="o">+</span><span class="n">yn</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span>
+<span class="w">        </span><span class="n">zndev</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mf">2.0_wp</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="p">(</span><span class="n">mu</span><span class="o">+</span><span class="n">zn</span><span class="p">)</span><span class="o">/</span><span class="n">mu</span>
+<span class="w">        </span><span class="n">epslon</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">xndev</span><span class="p">),</span><span class="nb">abs</span><span class="p">(</span><span class="n">yndev</span><span class="p">),</span><span class="nb">abs</span><span class="p">(</span><span class="n">zndev</span><span class="p">))</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">epslon</span><span class="o">&lt;</span><span class="n">errtol</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">exit</span>
+<span class="k">        </span><span class="n">xnroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">xn</span><span class="p">)</span>
+<span class="w">        </span><span class="n">ynroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">yn</span><span class="p">)</span>
+<span class="w">        </span><span class="n">znroot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">sqrt</span><span class="p">(</span><span class="n">zn</span><span class="p">)</span>
+<span class="w">        </span><span class="n">lamda</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">xnroot</span><span class="o">*</span><span class="p">(</span><span class="n">ynroot</span><span class="o">+</span><span class="n">znroot</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ynroot</span><span class="o">*</span><span class="n">znroot</span>
+<span class="w">        </span><span class="n">xn</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">xn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span>
+<span class="w">        </span><span class="n">yn</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">yn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span>
+<span class="w">        </span><span class="n">zn</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">zn</span><span class="o">+</span><span class="n">lamda</span><span class="p">)</span><span class="o">*</span><span class="mf">0.250_wp</span>
+<span class="w">    </span><span class="k">end do</span>
+<span class="k">    </span><span class="n">e2</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">xndev</span><span class="o">*</span><span class="n">yndev</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">zndev</span><span class="o">*</span><span class="n">zndev</span>
+<span class="w">    </span><span class="n">e3</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">xndev</span><span class="o">*</span><span class="n">yndev</span><span class="o">*</span><span class="n">zndev</span>
+<span class="w">    </span><span class="n">s</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0_wp</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">c1</span><span class="o">*</span><span class="n">e2</span><span class="o">-</span><span class="mf">0.10_wp</span><span class="o">-</span><span class="n">c2</span><span class="o">*</span><span class="n">e3</span><span class="p">)</span><span class="o">*</span><span class="n">e2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c3</span><span class="o">*</span><span class="n">e3</span>
+<span class="w">    </span><span class="n">drf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="o">/</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">mu</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">end function </span><span class="n">drf</span>
+</pre></div>
+
+    </section>
+    <br>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              carlson-elliptic-integrals
+ was developed by Jacob Williams<br>              &copy; 2026 
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+            </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>
