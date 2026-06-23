@@ -11,12 +11,21 @@
 
     module carlson_elliptic_module
 
-    use iso_fortran_env, only: error_unit, wp => real64
+    use, intrinsic :: iso_fortran_env
 
     implicit none
 
     private
 
+#ifdef REAL32
+   integer,parameter :: wp = real32   !! real kind used by this module [4 bytes]
+#elif REAL64
+   integer,parameter :: wp = real64   !! real kind used by this module [8 bytes]
+#elif REAL128
+   integer,parameter :: wp = real128  !! real kind used by this module [16 bytes]
+#else
+   integer,parameter :: wp = real64   !! real kind used by this module [8 bytes]
+#endif
     integer,parameter,public :: carlson_elliptic_module_wp = wp
 
     !**************************************************************
