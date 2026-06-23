@@ -55,6 +55,25 @@
 
 !*******************************************************************************
 !>
+!  Error handler for the Carlson elliptic integral routines.
+
+    pure subroutine error_handler(routine, ier, error_code)
+
+    character(len=*),intent(in) :: routine !! calling routine
+    integer,intent(out),optional :: ier  !! error flag (if not present, the program will stop)
+    integer,intent(in) :: error_code !! error code (if `ier` is present, it will be set to this)
+
+    if (.not. present(ier)) then
+        error stop 'Error in '//trim(routine)
+    else
+        ier = error_code
+    end if
+
+    end subroutine error_handler
+!*******************************************************************************
+
+!*******************************************************************************
+!>
 !  Compute an approximation of the Carlson elliptic integral:
 !  $$ R_C(x,y) = \frac{1}{2} \int_{0}^{\infty} (t+x)^{-1/2}(t+y)^{-1} dt $$
 !  where \(x\ge0\) and \(y>0\).
@@ -127,15 +146,15 @@
 
     real(wp),intent(in) :: x    !! nonnegative variable
     real(wp),intent(in) :: y    !! positive variable
-    integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !!
-                                !! * `IER = 0`: Normal and reliable termination of the
-                                !!   routine. It is assumed that the requested
-                                !!   accuracy has been achieved.
-                                !! * `IER > 0`: Abnormal termination of the routine:
-                                !! * `IER = 1`: `x<0 or y<=0`
-                                !! * `IER = 2`: `x+y<LOLIM`
-                                !! * `IER = 3`: `max(x,y) > UPLIM`
+    integer,intent(out),optional :: ier  !! indicates normal or abnormal termination:
+                                         !!
+                                         !! * `IER = 0`: Normal and reliable termination of the
+                                         !!   routine. It is assumed that the requested
+                                         !!   accuracy has been achieved.
+                                         !! * `IER > 0`: Abnormal termination of the routine:
+                                         !! * `IER = 1`: `x<0 or y<=0`
+                                         !! * `IER = 2`: `x+y<LOLIM`
+                                         !! * `IER = 3`: `max(x,y) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5
     real(wp) :: lamda, mu , s , sn , xn , yn
@@ -181,37 +200,37 @@
 
     ! check for errors:
     if ( x<0.0_wp .or. y<=0.0_wp ) then
-        ier = 1
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write(error_unit,'(a)') &
             'drc: x<0 .or. y<=0 where x = '//xern3//' and y = '//xern4
+        call error_handler('drc', ier, 1)
         return
     endif
 
     if ( max(x,y)>uplim ) then
-        ier = 3
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') uplim
         write(error_unit,'(a)') &
             'drc: max(x,y)>uplim where x = '//&
             xern3//' y = '//xern4//' and uplim = '//xern5
+        call error_handler('drc', ier, 3)
         return
     endif
 
     if ( x+y<lolim ) then
-        ier = 2
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') lolim
         write(error_unit,'(a)') &
             'drc: x+y<lolim where x = '//xern3//&
             ' y = '//xern4//' and lolim = '//xern5
+        call error_handler('drc', ier, 2)
         return
     endif
 
-    ier = 0
+    if (present(ier)) ier = 0
     xn = x
     yn = y
 
@@ -354,15 +373,15 @@
     real(wp),intent(in) :: x    !! nonnegative variable (\(x+y>0\))
     real(wp),intent(in) :: y    !! nonnegative variable (\(x+y>0\))
     real(wp),intent(in) :: z    !! positive variable
-    integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !!
-                                !! * `IER = 0`: Normal and reliable termination of the
-                                !!   routine. It is assumed that the requested
-                                !!   accuracy has been achieved.
-                                !! * `IER > 0`: Abnormal termination of the routine:
-                                !! * `IER = 1`: `min(x,y) < 0`
-                                !! * `IER = 2`: `min(x + y, z ) < LOLIM`
-                                !! * `IER = 3`: `max(x,y,z) > UPLIM`
+    integer,intent(out),optional :: ier  !! indicates normal or abnormal termination:
+                                         !!
+                                         !! * `IER = 0`: Normal and reliable termination of the
+                                         !!   routine. It is assumed that the requested
+                                         !!   accuracy has been achieved.
+                                         !! * `IER > 0`: Abnormal termination of the routine:
+                                         !! * `IER = 1`: `min(x,y) < 0`
+                                         !! * `IER = 2`: `min(x + y, z ) < LOLIM`
+                                         !! * `IER = 3`: `max(x,y,z) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5 , xern6
     real(wp) :: epslon, ea , eb , ec , ed , ef , lamda
@@ -414,16 +433,15 @@
 
     ! check for errors:
     if ( min(x,y)<0.0_wp ) then
-        ier = 1
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write(error_unit,'(a)') 'drd: min(x,y)<0 where x = '//xern3// &
                                 ' and y = '//xern4
+        call error_handler('drd', ier, 1)
         return
     endif
 
     if ( max(x,y,z)>uplim ) then
-        ier = 3
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
@@ -431,11 +449,11 @@
         write(error_unit,'(a)') 'drd: max(x,y,z)>uplim where x = '// &
                                 xern3//' y = '//xern4//' z = '//xern5// &
                                 ' and uplim = '//xern6
+        call error_handler('drd', ier, 3)
         return
     endif
 
     if ( min(x+y,z)<lolim ) then
-        ier = 2
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
@@ -443,10 +461,11 @@
         write(error_unit,'(a)') 'drd: min(x+y,z)<lolim where x = '// &
                                 xern3//' y = '//xern4//' z = '//xern5// &
                                 ' and lolim = '//xern6
+        call error_handler('drd', ier, 2)
         return
     endif
 
-    ier    = 0
+    if (present(ier)) ier = 0
     xn     = x
     yn     = y
     zn     = z
@@ -565,15 +584,15 @@
     real(wp),intent(in) :: x    !! nonnegative variable
     real(wp),intent(in) :: y    !! nonnegative variable
     real(wp),intent(in) :: z    !! nonnegative variable
-    integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !!
-                                !! * `IER = 0`: Normal and reliable termination of the
-                                !!   routine. It is assumed that the requested
-                                !!   accuracy has been achieved.
-                                !! * `IER > 0`: Abnormal termination of the routine:
-                                !! * `IER = 1`: `min(x,y,z) < 0`
-                                !! * `IER = 2`:` min(x+y,x+z,y+z) < LOLIM`
-                                !! * `IER = 3`: `max(x,y,z) > UPLIM`
+    integer,intent(out),optional :: ier  !! indicates normal or abnormal termination:
+                                         !!
+                                         !! * `IER = 0`: Normal and reliable termination of the
+                                         !!   routine. It is assumed that the requested
+                                         !!   accuracy has been achieved.
+                                         !! * `IER > 0`: Abnormal termination of the routine:
+                                         !! * `IER = 1`: `min(x,y,z) < 0`
+                                         !! * `IER = 2`:` min(x+y,x+z,y+z) < LOLIM`
+                                         !! * `IER = 3`: `max(x,y,z) > UPLIM`
 
     character(len=16) :: xern3 , xern4 , xern5 , xern6
     real(wp) :: epslon, e2 , e3 , lamda
@@ -622,17 +641,16 @@
 
     ! check for errors:
     if ( min(x,y,z)<0.0_wp ) then
-        ier = 1
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
         write(error_unit,'(a)') 'drf: min(x,y,z)<0 where x = '// &
                 xern3//' y = '//xern4//' and z = '//xern5
+        call error_handler('drf', ier, 1)
         return
     endif
 
     if ( max(x,y,z)>uplim ) then
-        ier = 3
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
@@ -640,21 +658,22 @@
         write(error_unit,'(a)') 'drf: max(x,y,z)>uplim where x = '// &
                 xern3//' y = '//xern4//' z = '//xern5// &
                 ' and uplim = '//xern6
+        call error_handler('drf', ier, 3)
         return
     endif
 
     if ( min(x+y,x+z,y+z)<lolim ) then
-        ier = 2
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
         write (xern6,'(1pe15.6)') lolim
         write(error_unit,'(a)') 'drf: min(x+y,x+z,y+z)<lolim where x = '//xern3// &
                 ' y = '//xern4//' z = '//xern5//' and lolim = '//xern6
+        call error_handler('drf', ier, 2)
         return
     endif
 
-    ier = 0
+    if (present(ier)) ier = 0
     xn  = x
     yn  = y
     zn  = z
@@ -811,14 +830,14 @@
     real(wp),intent(in) :: y    !! nonnegative variable
     real(wp),intent(in) :: z    !! nonnegative variable
     real(wp),intent(in) :: p    !! positive variable
-    integer,intent(out) :: ier  !! indicates normal or abnormal termination:
-                                !!
-                                !! * `IER = 0`: Normal and reliable termination of the
-                                !!   routine. It is assumed that the requested
-                                !!   accuracy has been achieved.
-                                !! * `IER = 1`: `min(x,y,z) < 0.0_wp`
-                                !! * `IER = 2`: `min(x+y,x+z,y+z,p) < LOLIM`
-                                !! * `IER = 3`: `max(x,y,z,p) > UPLIM`
+    integer,intent(out),optional :: ier  !! indicates normal or abnormal termination:
+                                         !!
+                                         !! * `IER = 0`: Normal and reliable termination of the
+                                         !!   routine. It is assumed that the requested
+                                         !!   accuracy has been achieved.
+                                         !! * `IER = 1`: `min(x,y,z) < 0.0_wp`
+                                         !! * `IER = 2`: `min(x+y,x+z,y+z,p) < LOLIM`
+                                         !! * `IER = 3`: `max(x,y,z,p) > UPLIM`
 
     character(len=16) xern3 , xern4 , xern5 , xern6 , xern7
     real(wp) :: alfa , beta , ea , eb , ec , e2 , e3, epslon
@@ -876,17 +895,16 @@
 
     ! check for errors:
     if ( min(x,y,z)<0.0_wp ) then
-        ier = 1
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
         write(error_unit,'(a)') 'drj: min(x,y,z)<0 where x = '// &
             xern3//' y = '//xern4//' and z = '//xern5
+        call error_handler('drj', ier, 1)
         return
     endif
 
     if ( max(x,y,z,p)>uplim ) then
-        ier = 3
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
@@ -895,11 +913,11 @@
         write(error_unit,'(a)') 'drj: max(x,y,z,p)>uplim where x = '// &
             xern3//' y = '//xern4//' z = '//xern5//' p = '// &
             xern6//' and uplim = '//xern7
+        call error_handler('drj', ier, 3)
         return
     endif
 
     if ( min(x+y,x+z,y+z,p)<lolim ) then
-        ier = 2
         write (xern3,'(1pe15.6)') x
         write (xern4,'(1pe15.6)') y
         write (xern5,'(1pe15.6)') z
@@ -908,10 +926,11 @@
         write(error_unit,'(a)') 'drj: min(x+y,x+z,y+z,p)<lolim where x = '//xern3// &
             ' y = '//xern4//' z = '//xern5//' p = '//xern6// &
             ' and lolim = '//xern7
+        call error_handler('drj', ier, 2)
         return
     endif
 
-    ier    = 0
+    if (present(ier)) ier = 0
     xn     = x
     yn     = y
     zn     = z
